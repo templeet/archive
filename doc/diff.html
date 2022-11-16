@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+//<![CDATA[
+var skinlang= {
+"fr" : {
+"title" : "diff",
+"nick" : "vous êtes identifié sous le compte &NICK&",
+"nonick" : "vous n'êtes pas identifié",
+"executetime" : "Cette page a été générée en &TIME&s.",
+"snapshot" : "Snapshot: &SNAPSHOT&",
+"source" : "source",
+"edit" : "edit",
+"note" : "<b>Note</b> : ",
+"template" : "template:"}};
+//]]>
+</script>
+    <script src="../auth/priv.js" type="text/javascript"></script>
+    <script src="../auth/floatwin.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function validxhtml()
+{
+  http = new XMLHttpRequest();
+  http.open("GET",document.baseURI, false);
+  http.send(null);
+
+  document.getElementById('fragment').value=http.responseText;
+  document.getElementById('formid').submit();
+  return true;
+}
+
+
+lang=bestlang('fr',skinlang);
+
+function jsgetuser(loggedin,notloggedin)
+{
+  var user=getuser();
+  
+  if(user!="")
+      txt=skinlang[lang][loggedin];
+    else  
+      txt=skinlang[lang][notloggedin];
+  
+      
+  txt=txt.replace(/&USER&/,user);    
+  txt=txt.replace(/&NICK&/,getnick());    
+  
+  document.write(txt);
+}
+
+function dskin(name,param)
+{
+  if (!skinlang[lang][name])
+    {
+      doucment.write("unknown message to display: "+name+" ");
+      return;
+    }
+  message=skinlang[lang][name];  
+  if (param)  
+    {
+      for (var paramname in param)  
+        {
+          message=message.replace(paramname,param[paramname]);
+        }
+      
+    }
+  document.write(message);
+}
+   
+//]]>
+</script>
+
+    
+    <title>diff</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" /> 
+    <link rel="stylesheet" type="text/css" href="../auth/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../skins/default.css" />
+    <link rel="stylesheet" type="text/css" href="doc.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../skins/classic/skin.css" />
+    
+    <script src="../skins/classic/skin.js" type="text/javascript"></script>
+    <script src="../auth/dump.js" type="text/javascript"></script>
+    
+</head>
+<body >
+<div>
+<div style="height: 64px;
+	    width: 100%;
+	    background-image: url(../skins/classic/top_bg.png);"
+><img src="../skins/classic/templeet.jpg" alt="templeet" /></div>
+<img src="../skins/classic/pix.png" style="display: block; height: 1px; width: 100%;" alt="pix" />
+<div >
+
+           
+<div style="position:relative;">
+<table><tr style="">
+  <td id="cond_00_home" style="">
+     <div id="menu_00_home" class="menu_item" >
+     <div id="submenu_00_home" class="submenu">
+  <table><tr style="">
+  <td id="cond_20_admin" style="">
+     <div id="menu_20_admin" class="menu_item" >
+     <div id="submenu_20_admin" class="submenu">
+  <table><tr style="">
+  <td id="cond_40_newuser" style="">
+     <div id="menu_40_newuser" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_newuser_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_newuser_fr','popup_40_newuser_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_newuser_fr','popup_40_newuser_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/newuser.html"><img
+                  id="icon_40_newuser_fr"
+                  alt="icon_40_newuser_fr"
+                  src="/archive/auth/icons/new-user.png"
+                  /></a>
+<div id="popup_40_newuser_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Création d'un nouvel utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_60_editpriv" style="">
+     <div id="menu_60_editpriv" class="menu_item" >
+     
+        
+     
+<div id="tpopup_60_editpriv_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_60_editpriv_fr','popup_60_editpriv_fr',1,event)" 
+onmouseout="popup_info('tpopup_60_editpriv_fr','popup_60_editpriv_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/privedit.html"><img
+                  id="icon_60_editpriv_fr"
+                  alt="icon_60_editpriv_fr"
+                  src="/archive/auth/icons/privileges.png"
+                  /></a>
+<div id="popup_60_editpriv_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Edition des privilèges des utilisateurs.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_70_area" style="">
+     <div id="menu_70_area" class="menu_item" >
+     
+        
+     
+<div id="tpopup_70_area_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_70_area_fr','popup_70_area_fr',1,event)" 
+onmouseout="popup_info('tpopup_70_area_fr','popup_70_area_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/areaedit.html"><img
+                  id="icon_70_area_fr"
+                  alt="icon_70_area_fr"
+                  src="/archive/auth/icons/editarea.png"
+                  /></a>
+<div id="popup_70_area_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Gestion des zones.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_75_configuration" style="">
+     <div id="menu_75_configuration" class="menu_item" >
+     <div id="submenu_75_configuration" class="submenu">
+  <table><tr style="">
+  <td id="cond_10_authmethod" style="">
+     <div id="menu_10_authmethod" class="menu_item" >
+     
+        
+     
+<div id="tpopup_10_authmethod_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_10_authmethod_fr','popup_10_authmethod_fr',1,event)" 
+onmouseout="popup_info('tpopup_10_authmethod_fr','popup_10_authmethod_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/method.html"><img
+                  id="icon_10_authmethod_fr"
+                  alt="icon_10_authmethod_fr"
+                  src="/archive/auth/icons/authmethod.png"
+                  /></a>
+<div id="popup_10_authmethod_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Méthode d'authentification.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_15_accountvalid" style="">
+     <div id="menu_15_accountvalid" class="menu_item" >
+     
+        
+     
+<div id="tpopup_15_accountvalid_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_15_accountvalid_fr','popup_15_accountvalid_fr',1,event)" 
+onmouseout="popup_info('tpopup_15_accountvalid_fr','popup_15_accountvalid_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/confvalid.html"><img
+                  id="icon_15_accountvalid_fr"
+                  alt="icon_15_accountvalid_fr"
+                  src="/archive/auth/icons/validaccount.png"
+                  /></a>
+<div id="popup_15_accountvalid_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Validation des comptes.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_20_info" style="">
+     <div id="menu_20_info" class="menu_item" >
+     
+        
+     
+<div id="tpopup_20_info_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_info_fr','popup_20_info_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_info_fr','popup_20_info_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/confprofile.html"><img
+                  id="icon_20_info_fr"
+                  alt="icon_20_info_fr"
+                  src="/archive/auth/icons/profileconf.png"
+                  /></a>
+<div id="popup_20_info_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Configuration du profil.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_25_clearcache" style="">
+     <div id="menu_25_clearcache" class="menu_item" >
+     
+        
+     
+<div id="tpopup_25_clearcache_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_25_clearcache_fr','popup_25_clearcache_fr',1,event)" 
+onmouseout="popup_info('tpopup_25_clearcache_fr','popup_25_clearcache_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/clearcache.html"><img
+                  id="icon_25_clearcache_fr"
+                  alt="icon_25_clearcache_fr"
+                  src="/archive/auth/icons/clearcache.png"
+                  /></a>
+<div id="popup_25_clearcache_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Nettoyage du cache.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_packageinstall" style="">
+     <div id="menu_30_packageinstall" class="menu_item" >
+     
+        
+     
+<div id="tpopup_30_packageinstall_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_packageinstall_fr','popup_30_packageinstall_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_packageinstall_fr','popup_30_packageinstall_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/packageinstall.html"><img
+                  id="icon_30_packageinstall_fr"
+                  alt="icon_30_packageinstall_fr"
+                  src="/archive/auth/icons/export-pack.png"
+                  /></a>
+<div id="popup_30_packageinstall_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Installation de packages.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_40_register" style="">
+     <div id="menu_40_register" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_register_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_register_fr','popup_40_register_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_register_fr','popup_40_register_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/configurator.html"><img
+                  id="icon_40_register_fr"
+                  alt="icon_40_register_fr"
+                  src="/archive/auth/icons/configurator.png"
+                  /></a>
+<div id="popup_40_register_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Enregistrement des modules.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_45_config" style="">
+     <div id="menu_45_config" class="menu_item" >
+     
+        
+     
+<div id="tpopup_45_config_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_45_config_fr','popup_45_config_fr',1,event)" 
+onmouseout="popup_info('tpopup_45_config_fr','popup_45_config_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/editconfig.html"><img
+                  id="icon_45_config_fr"
+                  alt="icon_45_config_fr"
+                  src="/archive/auth/icons/configuredb.png"
+                  /></a>
+<div id="popup_45_config_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Edition de votre configuration.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_60_debug" style="">
+     <div id="menu_60_debug" class="menu_item" >
+     
+        
+     
+<div id="tpopup_60_debug_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_60_debug_fr','popup_60_debug_fr',1,event)" 
+onmouseout="popup_info('tpopup_60_debug_fr','popup_60_debug_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/debuginfo.html"><img
+                  id="icon_60_debug_fr"
+                  alt="icon_60_debug_fr"
+                  src="/archive/auth/icons/debuginfo.png"
+                  /></a>
+<div id="popup_60_debug_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Debug: informations sur votre configuration.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_75_configuration_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_75_configuration_fr','popup_75_configuration_fr',1,event)" 
+onmouseout="popup_info('tpopup_75_configuration_fr','popup_75_configuration_fr',0,event)"
+                 
+                 style="">     
+            <img 
+                  id="icon_75_configuration_fr"
+                  alt="icon_75_configuration_fr"
+                  src="/archive/auth/icons/configure.png"
+                  />
+<div id="popup_75_configuration_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Configuration de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_20_admin_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_admin_fr','popup_20_admin_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_admin_fr','popup_20_admin_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/index.html"><img
+                  id="icon_20_admin_fr"
+                  alt="icon_20_admin_fr"
+                  src="/archive/auth/icons/templeetadmin.png"
+                  /></a>
+<div id="popup_20_admin_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Retour à la page principale de l'administration de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_myaccount" style="">
+     <div id="menu_30_myaccount" class="menu_item" >
+     <div id="submenu_30_myaccount" class="submenu">
+  <table><tr style="">
+  <td id="cond_10_createuser" style="">
+     <div id="menu_10_createuser" class="menu_item" >
+     
+        
+     
+<div id="tpopup_10_createuser_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_10_createuser_fr','popup_10_createuser_fr',1,event)" 
+onmouseout="popup_info('tpopup_10_createuser_fr','popup_10_createuser_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/createuser.html"><img
+                  id="icon_10_createuser_fr"
+                  alt="icon_10_createuser_fr"
+                  src="/archive/auth/icons/new-user.png"
+                  /></a>
+<div id="popup_10_createuser_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Création d'un nouvel utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_20_chpass" style="">
+     <div id="menu_20_chpass" class="menu_item" >
+     
+        
+     
+<div id="tpopup_20_chpass_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_chpass_fr','popup_20_chpass_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_chpass_fr','popup_20_chpass_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chpass.html"><img
+                  id="icon_20_chpass_fr"
+                  alt="icon_20_chpass_fr"
+                  src="/archive/auth/icons/key.png"
+                  /></a>
+<div id="popup_20_chpass_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement du mot de passe.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_lostpass" style="">
+     <div id="menu_30_lostpass" class="menu_item" >
+     
+        
+     
+<div id="tpopup_30_lostpass_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_lostpass_fr','popup_30_lostpass_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_lostpass_fr','popup_30_lostpass_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/lostpass.html"><img
+                  id="icon_30_lostpass_fr"
+                  alt="icon_30_lostpass_fr"
+                  src="/archive/auth/icons/lostpass.png"
+                  /></a>
+<div id="popup_30_lostpass_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Choisir un nouveau mot de passe.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_40_chmail" style="">
+     <div id="menu_40_chmail" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_chmail_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_chmail_fr','popup_40_chmail_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_chmail_fr','popup_40_chmail_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chmail.html"><img
+                  id="icon_40_chmail_fr"
+                  alt="icon_40_chmail_fr"
+                  src="/archive/auth/icons/changemail.png"
+                  /></a>
+<div id="popup_40_chmail_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement de l'adresse email</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_50_chinfo" style="">
+     <div id="menu_50_chinfo" class="menu_item" >
+     
+        
+     
+<div id="tpopup_50_chinfo_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_50_chinfo_fr','popup_50_chinfo_fr',1,event)" 
+onmouseout="popup_info('tpopup_50_chinfo_fr','popup_50_chinfo_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chinfo.html"><img
+                  id="icon_50_chinfo_fr"
+                  alt="icon_50_chinfo_fr"
+                  src="/archive/auth/icons/profile.png"
+                  /></a>
+<div id="popup_50_chinfo_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement des informations du profil.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_30_myaccount_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_myaccount_fr','popup_30_myaccount_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_myaccount_fr','popup_30_myaccount_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/my_account.html"><img
+                  id="icon_30_myaccount_fr"
+                  alt="icon_30_myaccount_fr"
+                  src="/archive/auth/icons/user.png"
+                  /></a>
+<div id="popup_30_myaccount_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Menu utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_50_doc" style="">
+     <div id="menu_50_doc" class="menu_item" >
+     
+        
+     
+<div id="tpopup_50_doc_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_50_doc_fr','popup_50_doc_fr',1,event)" 
+onmouseout="popup_info('tpopup_50_doc_fr','popup_50_doc_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/doc/index.html"><img
+                  id="icon_50_doc_fr"
+                  alt="icon_50_doc_fr"
+                  src="/archive/menu/00_home/50_doc/manpage.png"
+                  /></a>
+<div id="popup_50_doc_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Documentation de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_00_home_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_00_home_fr','popup_00_home_fr',1,event)" 
+onmouseout="popup_info('tpopup_00_home_fr','popup_00_home_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/"><img 
+                  id="icon_00_home_fr"
+                  alt="icon_00_home_fr"
+                  src="/archive/auth/icons/home.png"
+                  /></a>
+<div id="popup_00_home_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Retour à la page d'accueil</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_90_signout" style="">
+     <div id="menu_90_signout" class="menu_item" >
+     
+        
+     
+<div id="tpopup_90_signout_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_90_signout_fr','popup_90_signout_fr',1,event)" 
+onmouseout="popup_info('tpopup_90_signout_fr','popup_90_signout_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/signout.html"><img
+                  id="icon_90_signout_fr"
+                  alt="icon_90_signout_fr"
+                  src="/archive/auth/icons/signout.png"
+                  /></a>
+<div id="popup_90_signout_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Vous déconnecter.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_91_signin" style="">
+     <div id="menu_91_signin" class="menu_item" >
+     
+        
+     
+<div id="tpopup_91_signin_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_91_signin_fr','popup_91_signin_fr',1,event)" 
+onmouseout="popup_info('tpopup_91_signin_fr','popup_91_signin_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/index.html"><img
+                  id="icon_91_signin_fr"
+                  alt="icon_91_signin_fr"
+                  src="/archive/auth/icons/signin.png"
+                  /></a>
+<div id="popup_91_signin_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Vous connecter.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_95_lang" style="">
+     <div id="menu_95_lang" class="menu_item" >
+     <div id="submenu_95_lang" class="submenu">
+               <table style="width: 210px;">
+               <tr><td>
+<table class="lang_select" style="width:100%;">
+<tr>
+<td style="width: 60px;height: 42px;text-align: center;text-decoration:none;vertical-align: middle;">
+<a href="diff.html.en" style="text-decoration:none;">
+     <img 
+       id="icon_50_en"
+       alt="50_en"
+       style="text-align: center; vertical-align: middle; border: 0px;" 
+       src="/archive/menu/95_lang/50_en/en.png"
+   /></a>
+
+</td>
+<td style="text-align: left;text-decoration:none;vertical-align: middle;"><a href="diff.html.en" style="text-decoration:none;color:black;">
+English</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table class="lang_select" style="width:100%;">
+<tr>
+<td style="width: 60px;height: 42px;text-align: center;text-decoration:none;vertical-align: middle;">
+<a href="diff.html" style="text-decoration:none;">
+     <img 
+       id="icon_50_fr"
+       alt="50_fr"
+       style="text-align: center; vertical-align: middle; border: 0px;" 
+       src="/archive/menu/95_lang/50_fr/fr.png"
+   /></a>
+
+</td>
+<td style="text-align: left;text-decoration:none;vertical-align: middle;"><a href="diff.html" style="text-decoration:none;color:black;">
+Français</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+               </table>
+</div>
+                     
+        
+     
+<div id="tpopup_95_lang_fr" class="menu_item_lang"
+  
+                 style="">     
+            <img 
+                  id="icon_95_lang_fr"
+                  alt="icon_95_lang_fr"
+                  src="/archive/menu/95_lang/lang.png"
+                  />
+ 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  <script type="text/javascript">
+//<![CDATA[
+  if (!eval(auth_editpriv())){ document.getElementById('cond_20_admin').style.display = "none"; }
+      if (!eval(getpriv("CREATEUSER")>0)){ document.getElementById('cond_40_newuser').style.display = "none"; }
+      if (!eval(auth_editpriv())){ document.getElementById('cond_60_editpriv').style.display = "none"; }
+      if (!eval(auth_editpriv())){ document.getElementById('cond_70_area').style.display = "none"; }
+      if (!eval(getpriv("ADMIN"))){ document.getElementById('cond_75_configuration').style.display = "none"; }
+      if (!eval(getpriv("CREATEUSER")>=1 && getnick()=="")){ document.getElementById('cond_10_createuser').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_20_chpass').style.display = "none"; }
+      if (!eval(getnick()=="")){ document.getElementById('cond_30_lostpass').style.display = "none"; }
+      if (!eval(getnick()!="" && !auth_emailislogin())){ document.getElementById('cond_40_chmail').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_50_chinfo').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_90_signout').style.display = "none"; }
+      if (!eval(getnick()=="")){ document.getElementById('cond_91_signin').style.display = "none"; }
+      
+  if (document.getElementById('submenu_00_home').clientWidth<15){ document.getElementById('submenu_00_home').style.display = "none"; }
+      if (document.getElementById('submenu_20_admin').clientWidth<15){ document.getElementById('submenu_20_admin').style.display = "none"; }
+      if (document.getElementById('submenu_75_configuration').clientWidth<15){ document.getElementById('submenu_75_configuration').style.display = "none"; }
+      if (document.getElementById('submenu_30_myaccount').clientWidth<15){ document.getElementById('submenu_30_myaccount').style.display = "none"; }
+      if (document.getElementById('submenu_95_lang').clientWidth<15){ document.getElementById('submenu_95_lang').style.display = "none"; }
+      
+  
+//]]>
+</script>
+</div>
+  </div>
+<div>
+<table style="width: 100%; background: white;">
+<tr><td style="width: 14px;"><img src="../skins/classic/corner_top.png" style="display: block;" alt="corner_top" /></td>
+<td style="vertical-align: top;"><img src="../skins/classic/pix.png" style="width: 100%; height: 1px;display: block;" alt="pix" /></td></tr>
+<tr>
+<td style="background-image: url(../skins/classic/left.png);"></td>
+<td>
+<div class="main">
+<script type="text/javascript">
+//<![CDATA[
+dskin("note");
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+jsgetuser("nick","nonick");
+//]]>
+</script>
+<br /><br />
+
+<script src="../auth/priv.js" type="text/javascript"></script>
+<script src="../auth/floatwin.js" type="text/javascript"></script>
+
+<div id="doc_content">
+
+
+<a id="top"></a>
+<table style="width: 100%;">
+  <tr>
+<td style="width: 99%;"><div class="doc_title" id="doc_title">diff</div><div id="doc_header"></div><div ><div class="doc_toc" id="doc_toc"><div class="doc_toc_bloc" id="blocidtoc_1">
+<div class="doc_toc_title_bloc">Functions</div><ul id="bloculid_1">
+<li id="doc_toc_entry_diff" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#diff">diff</a></div></li>
+</ul></div></div></div>
+
+</td>
+<td style="vertical-align: top;"><div id="docmenu">
+<ul>
+  <li><a href="index.html">Modules</a></li>
+  <li><a href="functions.html">Fonctions</a></li>
+</ul>
+</div>
+
+</td>
+  </tr>
+</table>    
+<div class="doc_linktop"></div>
+<div id="bloccontent"><div class="text_bloc doc_bloc" id="blocidcontent_1">
+<div class="doc_entry" id="doc_entry_diff"><div class="doc_title_entry"><a id="diff"></a>diff</div><div id="entryid_1" class="content doc_content"></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div></div></div><div id="doc_footer"></div>
+</div>
+
+</div>
+
+</td></tr>
+
+<tr><td style="height: 12px;"><img src="../skins/classic/corner_bottom.png" alt="corner_bottom" style="display: block;" /></td>
+<td style="vertical-align: bottom;"><img src="../skins/classic/pix.png" style="display: block; width: 100%; height: 1px;" alt="pix" /></td></tr>
+</table>
+</div>
+
+<div class="footer">
+<table style="width: 100%;">
+<tr><td style="width: 100%;vertical-align: top;padding-left: 5px;">
+<div>
+<span id="snapshot" style="position: relative;"
+                            onmouseover="toggleDiv('executedtime',1,event)"
+                            onmouseout="toggleDiv('executedtime',0)"><script type="text/javascript">
+//<![CDATA[
+dskin("snapshot",{ "&SNAPSHOT&" : "201606171145"});
+//]]>
+</script> 
+</span>
+<div id="executedtime" class="floatwin" style="top: 10px;"><script type="text/javascript">
+//<![CDATA[
+dskin("executetime",{ "&TIME&" : "0,1944"});
+//]]>
+</script>
+</div>
+
+<br />
+<a href="#" onmousedown="validxhtml()"><img src="../auth/icons/valid-xhtml10.png" alt="valid-xhtml10.png" /></a>
+<div style="display: none;">
+  <form id="formid" method="post" enctype="multipart/form-data" action="http://validator.w3.org/check">
+    <div>
+      <textarea id="fragment" name="fragment" rows="12" cols="80"></textarea>
+      <input title="Submit for validation" type="submit" value="Check" />
+    </div>
+  </form>
+</div>
+</div>
+</td><td><a href="http://www.templeet.org/"><img src="../auth/icons/powered_by_templeet.png"
+style="padding: 5px;display: block;" alt="powered_by_templeet" /></a>
+</td></tr>
+</table>
+</div>
+<img src="../skins/classic/pix.png" style="display: block; height: 1px; width: 100%;" alt="pix" />
+</div>
+</body>
+</html>

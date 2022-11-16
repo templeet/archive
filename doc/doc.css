@@ -1,0 +1,89 @@
+.doc_title {
+    background: #FDFDD6;
+    border: solid black 1px;
+    margin: 1em 2em;
+    padding: 10px 10px;
+
+}
+
+.doc_toc_bloc {
+    margin: 1em 0;
+
+}
+
+.doc_toc_title_bloc {
+    font-weight: bolder;
+    color: #990033;
+
+}
+
+.doc_toc_title_entry {
+}
+
+.doc_title_entry {
+    color: #990033;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.doc_code {
+    background: #FDFDD6;
+    border: solid black 1px;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-family: monospace;
+    white-space: pre;
+}
+
+.doc_dd {
+    margin: 0 0 0 40px;
+}
+
+.doc_dt {
+    margin: 0;
+}
+
+.doc_content {
+    margin-left: 2em;
+}
+
+#doc_header {
+    margin-left: 2em;
+}
+
+#doc_footer {
+    margin-left: 2em;
+}
+
+div.doc_linktop {
+    border-bottom: solid black 1px;
+    padding-bottom: 5px;
+    padding-right: 2em;
+    margin: 1em;
+    text-align: right;
+}
+
+span.doc_linktop {
+    text-decoration: none;
+    font-size: 0;
+}
+
+span.doc_linktop:before {
+    content: url(/archive/doc/icons/top.png)
+}
+
+div.doc_linktop > a:hover{ text-decoration: none; }
+
+#docmenu {
+    float: right;
+    background: white;
+    border: solid black 1px;
+    padding: 10px;
+    margin: 1em 2em;
+
+}
+
+#docmenu ul {
+    margin: 0 0 0 15px;
+}
+

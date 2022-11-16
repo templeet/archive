@@ -1,0 +1,115 @@
+/* 
+ * Pascal COURTOIS
+ */
+ 
+body,html {
+	font-size: 12px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	background-color: #FDFDD6;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4 { display: block ; font-weight: bolder; color: #990033; }
+h1              { font-size: 2em; }
+h2              { font-size: 1.5em; }
+h3              { font-size: 1.17em; }
+
+div.floatwin {
+    position:absolute;
+    top: 70px;
+    left: 10px;
+    width: 210px;
+    visibility: hidden;
+    border: solid #990033 1px; 
+    text-align: left;
+    padding: 10px;
+    z-index: 200;
+    background: #FDFDD6;
+    background /*\**/: #FDFDD6 url("../../auth/icons/info.png") no-repeat 5px 5px\9;
+
+}
+
+div.floatwin:before {
+   content: url("../../auth/icons/info.png");
+   padding: 5px;
+   vertical-align: top;
+}
+   
+*+html div.floatwin:first-letter { 
+   padding-left: 25px;
+ }
+
+a.langlink:visited,
+a.langlink:link  {
+    color: black; 
+    text-decoration: none;      
+}  
+
+.lang_select:hover {
+	background-color: #fffc93;
+}
+
+div.submenu {
+    position:absolute;
+    visibility: hidden;
+    border: solid #990033 1px; 
+    background-color: #FDFDD6;
+    text-align: left;
+    padding: 5px;
+    z-index: 200;
+    top: 52px;
+    left: 0px;
+}
+
+#snapshot:hover > #executedtime { visibility: visible; }
+
+.menu_item {
+    position: relative;
+}
+
+.menu_item:hover  {
+  background-color: #fffc93;
+}
+
+.menu_item_lang {
+	position:relative;
+	height: 50px;
+	width:50px;
+	padding: 5px;
+	text-align:center;
+}
+
+.menu_item_lang:hover {
+	background-color: #fffc93;
+}
+
+.menu_info {
+    position:absolute;
+    top: 80px;
+    left: 10px;
+    width: 210px;
+    visibility: hidden;
+    border: solid #990033 1px; 
+    background-color: #FDFDD6;
+    text-align: left;
+    padding: 10px;
+    z-index: 200;
+    display: block;
+}
+
+.main {
+  margin-right: 10px;
+}
+
+
+*#menu_00_home:hover > *#submenu_00_home { visibility: visible; }
+*#menu_20_admin:hover > *#submenu_20_admin { visibility: visible; }
+*#menu_75_configuration:hover > *#submenu_75_configuration { visibility: visible; }
+*#menu_30_myaccount:hover > *#submenu_30_myaccount { visibility: visible; }
+*#menu_95_lang:hover > *#submenu_95_lang { visibility: visible; }
+
+#docmenu {
+  background: #FDFDD6;
+  border: solid #990033 1px;
+}

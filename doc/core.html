@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+//<![CDATA[
+var skinlang= {
+"fr" : {
+"title" : "Le cœur de Templeet",
+"nick" : "vous êtes identifié sous le compte &NICK&",
+"nonick" : "vous n'êtes pas identifié",
+"executetime" : "Cette page a été générée en &TIME&s.",
+"snapshot" : "Snapshot: &SNAPSHOT&",
+"source" : "source",
+"edit" : "edit",
+"note" : "<b>Note</b> : ",
+"template" : "template:"}};
+//]]>
+</script>
+    <script src="../auth/priv.js" type="text/javascript"></script>
+    <script src="../auth/floatwin.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function validxhtml()
+{
+  http = new XMLHttpRequest();
+  http.open("GET",document.baseURI, false);
+  http.send(null);
+
+  document.getElementById('fragment').value=http.responseText;
+  document.getElementById('formid').submit();
+  return true;
+}
+
+
+lang=bestlang('fr',skinlang);
+
+function jsgetuser(loggedin,notloggedin)
+{
+  var user=getuser();
+  
+  if(user!="")
+      txt=skinlang[lang][loggedin];
+    else  
+      txt=skinlang[lang][notloggedin];
+  
+      
+  txt=txt.replace(/&USER&/,user);    
+  txt=txt.replace(/&NICK&/,getnick());    
+  
+  document.write(txt);
+}
+
+function dskin(name,param)
+{
+  if (!skinlang[lang][name])
+    {
+      doucment.write("unknown message to display: "+name+" ");
+      return;
+    }
+  message=skinlang[lang][name];  
+  if (param)  
+    {
+      for (var paramname in param)  
+        {
+          message=message.replace(paramname,param[paramname]);
+        }
+      
+    }
+  document.write(message);
+}
+   
+//]]>
+</script>
+
+    
+    <title>Le cœur de Templeet</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" /> 
+    <link rel="stylesheet" type="text/css" href="../auth/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../skins/default.css" />
+    <link rel="stylesheet" type="text/css" href="doc.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../skins/classic/skin.css" />
+    
+    <script src="../skins/classic/skin.js" type="text/javascript"></script>
+    <script src="../auth/dump.js" type="text/javascript"></script>
+    
+</head>
+<body >
+<div>
+<div style="height: 64px;
+	    width: 100%;
+	    background-image: url(../skins/classic/top_bg.png);"
+><img src="../skins/classic/templeet.jpg" alt="templeet" /></div>
+<img src="../skins/classic/pix.png" style="display: block; height: 1px; width: 100%;" alt="pix" />
+<div >
+
+           
+<div style="position:relative;">
+<table><tr style="">
+  <td id="cond_00_home" style="">
+     <div id="menu_00_home" class="menu_item" >
+     <div id="submenu_00_home" class="submenu">
+  <table><tr style="">
+  <td id="cond_20_admin" style="">
+     <div id="menu_20_admin" class="menu_item" >
+     <div id="submenu_20_admin" class="submenu">
+  <table><tr style="">
+  <td id="cond_40_newuser" style="">
+     <div id="menu_40_newuser" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_newuser_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_newuser_fr','popup_40_newuser_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_newuser_fr','popup_40_newuser_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/newuser.html"><img
+                  id="icon_40_newuser_fr"
+                  alt="icon_40_newuser_fr"
+                  src="/archive/auth/icons/new-user.png"
+                  /></a>
+<div id="popup_40_newuser_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Création d'un nouvel utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_60_editpriv" style="">
+     <div id="menu_60_editpriv" class="menu_item" >
+     
+        
+     
+<div id="tpopup_60_editpriv_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_60_editpriv_fr','popup_60_editpriv_fr',1,event)" 
+onmouseout="popup_info('tpopup_60_editpriv_fr','popup_60_editpriv_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/privedit.html"><img
+                  id="icon_60_editpriv_fr"
+                  alt="icon_60_editpriv_fr"
+                  src="/archive/auth/icons/privileges.png"
+                  /></a>
+<div id="popup_60_editpriv_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Edition des privilèges des utilisateurs.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_70_area" style="">
+     <div id="menu_70_area" class="menu_item" >
+     
+        
+     
+<div id="tpopup_70_area_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_70_area_fr','popup_70_area_fr',1,event)" 
+onmouseout="popup_info('tpopup_70_area_fr','popup_70_area_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/areaedit.html"><img
+                  id="icon_70_area_fr"
+                  alt="icon_70_area_fr"
+                  src="/archive/auth/icons/editarea.png"
+                  /></a>
+<div id="popup_70_area_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Gestion des zones.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_75_configuration" style="">
+     <div id="menu_75_configuration" class="menu_item" >
+     <div id="submenu_75_configuration" class="submenu">
+  <table><tr style="">
+  <td id="cond_10_authmethod" style="">
+     <div id="menu_10_authmethod" class="menu_item" >
+     
+        
+     
+<div id="tpopup_10_authmethod_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_10_authmethod_fr','popup_10_authmethod_fr',1,event)" 
+onmouseout="popup_info('tpopup_10_authmethod_fr','popup_10_authmethod_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/method.html"><img
+                  id="icon_10_authmethod_fr"
+                  alt="icon_10_authmethod_fr"
+                  src="/archive/auth/icons/authmethod.png"
+                  /></a>
+<div id="popup_10_authmethod_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Méthode d'authentification.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_15_accountvalid" style="">
+     <div id="menu_15_accountvalid" class="menu_item" >
+     
+        
+     
+<div id="tpopup_15_accountvalid_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_15_accountvalid_fr','popup_15_accountvalid_fr',1,event)" 
+onmouseout="popup_info('tpopup_15_accountvalid_fr','popup_15_accountvalid_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/confvalid.html"><img
+                  id="icon_15_accountvalid_fr"
+                  alt="icon_15_accountvalid_fr"
+                  src="/archive/auth/icons/validaccount.png"
+                  /></a>
+<div id="popup_15_accountvalid_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Validation des comptes.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_20_info" style="">
+     <div id="menu_20_info" class="menu_item" >
+     
+        
+     
+<div id="tpopup_20_info_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_info_fr','popup_20_info_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_info_fr','popup_20_info_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/confprofile.html"><img
+                  id="icon_20_info_fr"
+                  alt="icon_20_info_fr"
+                  src="/archive/auth/icons/profileconf.png"
+                  /></a>
+<div id="popup_20_info_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Configuration du profil.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_25_clearcache" style="">
+     <div id="menu_25_clearcache" class="menu_item" >
+     
+        
+     
+<div id="tpopup_25_clearcache_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_25_clearcache_fr','popup_25_clearcache_fr',1,event)" 
+onmouseout="popup_info('tpopup_25_clearcache_fr','popup_25_clearcache_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/clearcache.html"><img
+                  id="icon_25_clearcache_fr"
+                  alt="icon_25_clearcache_fr"
+                  src="/archive/auth/icons/clearcache.png"
+                  /></a>
+<div id="popup_25_clearcache_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Nettoyage du cache.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_packageinstall" style="">
+     <div id="menu_30_packageinstall" class="menu_item" >
+     
+        
+     
+<div id="tpopup_30_packageinstall_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_packageinstall_fr','popup_30_packageinstall_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_packageinstall_fr','popup_30_packageinstall_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/packageinstall.html"><img
+                  id="icon_30_packageinstall_fr"
+                  alt="icon_30_packageinstall_fr"
+                  src="/archive/auth/icons/export-pack.png"
+                  /></a>
+<div id="popup_30_packageinstall_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Installation de packages.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_40_register" style="">
+     <div id="menu_40_register" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_register_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_register_fr','popup_40_register_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_register_fr','popup_40_register_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/configurator.html"><img
+                  id="icon_40_register_fr"
+                  alt="icon_40_register_fr"
+                  src="/archive/auth/icons/configurator.png"
+                  /></a>
+<div id="popup_40_register_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Enregistrement des modules.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_45_config" style="">
+     <div id="menu_45_config" class="menu_item" >
+     
+        
+     
+<div id="tpopup_45_config_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_45_config_fr','popup_45_config_fr',1,event)" 
+onmouseout="popup_info('tpopup_45_config_fr','popup_45_config_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/editconfig.html"><img
+                  id="icon_45_config_fr"
+                  alt="icon_45_config_fr"
+                  src="/archive/auth/icons/configuredb.png"
+                  /></a>
+<div id="popup_45_config_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Edition de votre configuration.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_60_debug" style="">
+     <div id="menu_60_debug" class="menu_item" >
+     
+        
+     
+<div id="tpopup_60_debug_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_60_debug_fr','popup_60_debug_fr',1,event)" 
+onmouseout="popup_info('tpopup_60_debug_fr','popup_60_debug_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/debuginfo.html"><img
+                  id="icon_60_debug_fr"
+                  alt="icon_60_debug_fr"
+                  src="/archive/auth/icons/debuginfo.png"
+                  /></a>
+<div id="popup_60_debug_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Debug: informations sur votre configuration.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_75_configuration_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_75_configuration_fr','popup_75_configuration_fr',1,event)" 
+onmouseout="popup_info('tpopup_75_configuration_fr','popup_75_configuration_fr',0,event)"
+                 
+                 style="">     
+            <img 
+                  id="icon_75_configuration_fr"
+                  alt="icon_75_configuration_fr"
+                  src="/archive/auth/icons/configure.png"
+                  />
+<div id="popup_75_configuration_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Configuration de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_20_admin_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_admin_fr','popup_20_admin_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_admin_fr','popup_20_admin_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/index.html"><img
+                  id="icon_20_admin_fr"
+                  alt="icon_20_admin_fr"
+                  src="/archive/auth/icons/templeetadmin.png"
+                  /></a>
+<div id="popup_20_admin_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Retour à la page principale de l'administration de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_myaccount" style="">
+     <div id="menu_30_myaccount" class="menu_item" >
+     <div id="submenu_30_myaccount" class="submenu">
+  <table><tr style="">
+  <td id="cond_10_createuser" style="">
+     <div id="menu_10_createuser" class="menu_item" >
+     
+        
+     
+<div id="tpopup_10_createuser_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_10_createuser_fr','popup_10_createuser_fr',1,event)" 
+onmouseout="popup_info('tpopup_10_createuser_fr','popup_10_createuser_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/createuser.html"><img
+                  id="icon_10_createuser_fr"
+                  alt="icon_10_createuser_fr"
+                  src="/archive/auth/icons/new-user.png"
+                  /></a>
+<div id="popup_10_createuser_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Création d'un nouvel utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_20_chpass" style="">
+     <div id="menu_20_chpass" class="menu_item" >
+     
+        
+     
+<div id="tpopup_20_chpass_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_20_chpass_fr','popup_20_chpass_fr',1,event)" 
+onmouseout="popup_info('tpopup_20_chpass_fr','popup_20_chpass_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chpass.html"><img
+                  id="icon_20_chpass_fr"
+                  alt="icon_20_chpass_fr"
+                  src="/archive/auth/icons/key.png"
+                  /></a>
+<div id="popup_20_chpass_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement du mot de passe.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_30_lostpass" style="">
+     <div id="menu_30_lostpass" class="menu_item" >
+     
+        
+     
+<div id="tpopup_30_lostpass_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_lostpass_fr','popup_30_lostpass_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_lostpass_fr','popup_30_lostpass_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/lostpass.html"><img
+                  id="icon_30_lostpass_fr"
+                  alt="icon_30_lostpass_fr"
+                  src="/archive/auth/icons/lostpass.png"
+                  /></a>
+<div id="popup_30_lostpass_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Choisir un nouveau mot de passe.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_40_chmail" style="">
+     <div id="menu_40_chmail" class="menu_item" >
+     
+        
+     
+<div id="tpopup_40_chmail_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_40_chmail_fr','popup_40_chmail_fr',1,event)" 
+onmouseout="popup_info('tpopup_40_chmail_fr','popup_40_chmail_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chmail.html"><img
+                  id="icon_40_chmail_fr"
+                  alt="icon_40_chmail_fr"
+                  src="/archive/auth/icons/changemail.png"
+                  /></a>
+<div id="popup_40_chmail_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement de l'adresse email</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_50_chinfo" style="">
+     <div id="menu_50_chinfo" class="menu_item" >
+     
+        
+     
+<div id="tpopup_50_chinfo_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_50_chinfo_fr','popup_50_chinfo_fr',1,event)" 
+onmouseout="popup_info('tpopup_50_chinfo_fr','popup_50_chinfo_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/chinfo.html"><img
+                  id="icon_50_chinfo_fr"
+                  alt="icon_50_chinfo_fr"
+                  src="/archive/auth/icons/profile.png"
+                  /></a>
+<div id="popup_50_chinfo_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Changement des informations du profil.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_30_myaccount_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_30_myaccount_fr','popup_30_myaccount_fr',1,event)" 
+onmouseout="popup_info('tpopup_30_myaccount_fr','popup_30_myaccount_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/my_account.html"><img
+                  id="icon_30_myaccount_fr"
+                  alt="icon_30_myaccount_fr"
+                  src="/archive/auth/icons/user.png"
+                  /></a>
+<div id="popup_30_myaccount_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Menu utilisateur</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_50_doc" style="">
+     <div id="menu_50_doc" class="menu_item" >
+     
+        
+     
+<div id="tpopup_50_doc_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_50_doc_fr','popup_50_doc_fr',1,event)" 
+onmouseout="popup_info('tpopup_50_doc_fr','popup_50_doc_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/doc/index.html"><img
+                  id="icon_50_doc_fr"
+                  alt="icon_50_doc_fr"
+                  src="/archive/menu/00_home/50_doc/manpage.png"
+                  /></a>
+<div id="popup_50_doc_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Documentation de Templeet</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  
+</div>
+                     
+        
+     
+<div id="tpopup_00_home_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_00_home_fr','popup_00_home_fr',1,event)" 
+onmouseout="popup_info('tpopup_00_home_fr','popup_00_home_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/"><img 
+                  id="icon_00_home_fr"
+                  alt="icon_00_home_fr"
+                  src="/archive/auth/icons/home.png"
+                  /></a>
+<div id="popup_00_home_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Retour à la page d'accueil</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_90_signout" style="">
+     <div id="menu_90_signout" class="menu_item" >
+     
+        
+     
+<div id="tpopup_90_signout_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_90_signout_fr','popup_90_signout_fr',1,event)" 
+onmouseout="popup_info('tpopup_90_signout_fr','popup_90_signout_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/signout.html"><img
+                  id="icon_90_signout_fr"
+                  alt="icon_90_signout_fr"
+                  src="/archive/auth/icons/signout.png"
+                  /></a>
+<div id="popup_90_signout_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Vous déconnecter.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_91_signin" style="">
+     <div id="menu_91_signin" class="menu_item" >
+     
+        
+     
+<div id="tpopup_91_signin_fr" class="menu_item_lang"
+  onmouseover="popup_info('tpopup_91_signin_fr','popup_91_signin_fr',1,event)" 
+onmouseout="popup_info('tpopup_91_signin_fr','popup_91_signin_fr',0,event)"
+                 
+                 style="">     
+            <a href="/archive/auth/index.html"><img
+                  id="icon_91_signin_fr"
+                  alt="icon_91_signin_fr"
+                  src="/archive/auth/icons/signin.png"
+                  /></a>
+<div id="popup_91_signin_fr" class="menu_info" >
+<img src="/archive/auth/icons/info.png" alt="info" style="" />
+Vous connecter.</div> 
+</div>
+
+  
+     </div>
+</td>
+
+    
+<td id="cond_95_lang" style="">
+     <div id="menu_95_lang" class="menu_item" >
+     <div id="submenu_95_lang" class="submenu">
+               <table style="width: 210px;">
+               <tr><td>
+<table class="lang_select" style="width:100%;">
+<tr>
+<td style="width: 60px;height: 42px;text-align: center;text-decoration:none;vertical-align: middle;">
+<a href="core.html.en" style="text-decoration:none;">
+     <img 
+       id="icon_50_en"
+       alt="50_en"
+       style="text-align: center; vertical-align: middle; border: 0px;" 
+       src="/archive/menu/95_lang/50_en/en.png"
+   /></a>
+
+</td>
+<td style="text-align: left;text-decoration:none;vertical-align: middle;"><a href="core.html.en" style="text-decoration:none;color:black;">
+English</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table class="lang_select" style="width:100%;">
+<tr>
+<td style="width: 60px;height: 42px;text-align: center;text-decoration:none;vertical-align: middle;">
+<a href="core.html" style="text-decoration:none;">
+     <img 
+       id="icon_50_fr"
+       alt="50_fr"
+       style="text-align: center; vertical-align: middle; border: 0px;" 
+       src="/archive/menu/95_lang/50_fr/fr.png"
+   /></a>
+
+</td>
+<td style="text-align: left;text-decoration:none;vertical-align: middle;"><a href="core.html" style="text-decoration:none;color:black;">
+Français</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+               </table>
+</div>
+                     
+        
+     
+<div id="tpopup_95_lang_fr" class="menu_item_lang"
+  
+                 style="">     
+            <img 
+                  id="icon_95_lang_fr"
+                  alt="icon_95_lang_fr"
+                  src="/archive/menu/95_lang/lang.png"
+                  />
+ 
+</div>
+
+  
+     </div>
+</td>
+
+    
+</tr></table>
+  <script type="text/javascript">
+//<![CDATA[
+  if (!eval(auth_editpriv())){ document.getElementById('cond_20_admin').style.display = "none"; }
+      if (!eval(getpriv("CREATEUSER")>0)){ document.getElementById('cond_40_newuser').style.display = "none"; }
+      if (!eval(auth_editpriv())){ document.getElementById('cond_60_editpriv').style.display = "none"; }
+      if (!eval(auth_editpriv())){ document.getElementById('cond_70_area').style.display = "none"; }
+      if (!eval(getpriv("ADMIN"))){ document.getElementById('cond_75_configuration').style.display = "none"; }
+      if (!eval(getpriv("CREATEUSER")>=1 && getnick()=="")){ document.getElementById('cond_10_createuser').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_20_chpass').style.display = "none"; }
+      if (!eval(getnick()=="")){ document.getElementById('cond_30_lostpass').style.display = "none"; }
+      if (!eval(getnick()!="" && !auth_emailislogin())){ document.getElementById('cond_40_chmail').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_50_chinfo').style.display = "none"; }
+      if (!eval(getnick()!="")){ document.getElementById('cond_90_signout').style.display = "none"; }
+      if (!eval(getnick()=="")){ document.getElementById('cond_91_signin').style.display = "none"; }
+      
+  if (document.getElementById('submenu_00_home').clientWidth<15){ document.getElementById('submenu_00_home').style.display = "none"; }
+      if (document.getElementById('submenu_20_admin').clientWidth<15){ document.getElementById('submenu_20_admin').style.display = "none"; }
+      if (document.getElementById('submenu_75_configuration').clientWidth<15){ document.getElementById('submenu_75_configuration').style.display = "none"; }
+      if (document.getElementById('submenu_30_myaccount').clientWidth<15){ document.getElementById('submenu_30_myaccount').style.display = "none"; }
+      if (document.getElementById('submenu_95_lang').clientWidth<15){ document.getElementById('submenu_95_lang').style.display = "none"; }
+      
+  
+//]]>
+</script>
+</div>
+  </div>
+<div>
+<table style="width: 100%; background: white;">
+<tr><td style="width: 14px;"><img src="../skins/classic/corner_top.png" style="display: block;" alt="corner_top" /></td>
+<td style="vertical-align: top;"><img src="../skins/classic/pix.png" style="width: 100%; height: 1px;display: block;" alt="pix" /></td></tr>
+<tr>
+<td style="background-image: url(../skins/classic/left.png);"></td>
+<td>
+<div class="main">
+<script type="text/javascript">
+//<![CDATA[
+dskin("note");
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+jsgetuser("nick","nonick");
+//]]>
+</script>
+<br /><br />
+
+<script src="../auth/priv.js" type="text/javascript"></script>
+<script src="../auth/floatwin.js" type="text/javascript"></script>
+
+<div id="doc_content">
+
+
+<a id="top"></a>
+<table style="width: 100%;">
+  <tr>
+<td style="width: 99%;"><div class="doc_title" id="doc_title">Le cœur de Templeet</div><div id="doc_header"></div><div ><div class="doc_toc" id="doc_toc"><div class="doc_toc_bloc" id="blocidtoc_1">
+<div class="doc_toc_title_bloc">Généralités</div><ul id="bloculid_1">
+<li id="doc_toc_entry_Lestemplates" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lestemplates">Les templates</a></div></li>
+<li id="doc_toc_entry_Lestemplatesgnrique" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lestemplatesgnrique">Les templates générique</a></div></li>
+<li id="doc_toc_entry_Syntaxe" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Syntaxe">Syntaxe</a></div></li>
+<li id="doc_toc_entry_Lesvariables" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lesvariables">Les variables</a></div></li>
+<li id="doc_toc_entry_Lesoprateurs" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lesoprateurs">Les opérateurs</a></div></li>
+<li id="doc_toc_entry_Leschanesetlesblocsdinstructions" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Leschanesetlesblocsdinstructions">Les chaînes et les blocs d'instructions</a></div></li>
+<li id="doc_toc_entry_Lescommentaires" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lescommentaires">Les commentaires</a></div></li>
+<li id="doc_toc_entry_LesvariablesducurdeTempleet" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#LesvariablesducurdeTempleet">Les variables du cœur de Templeet</a></div></li>
+<li id="doc_toc_entry_Lesobjets" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lesobjets">Les objets</a></div></li>
+<li id="doc_toc_entry_Lecachedepages" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lecachedepages">Le cache de pages</a></div></li>
+<li id="doc_toc_entry_Lesfonctionsutilisateur" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lesfonctionsutilisateur">Les fonctions utilisateur</a></div></li>
+</ul></div><div class="doc_toc_bloc" id="blocidtoc_2">
+<div class="doc_toc_title_bloc">Fonctions</div><ul id="bloculid_2">
+<li id="doc_toc_entry_if" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#if">if</a></div></li>
+<li id="doc_toc_entry_while" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#while">while</a></div></li>
+<li id="doc_toc_entry_Avertissement" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Avertissement">Avertissement</a></div></li>
+<li id="doc_toc_entry_for" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#for">for</a></div></li>
+<li id="doc_toc_entry_foreach" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#foreach">foreach</a></div></li>
+<li id="doc_toc_entry_break" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#break">break</a></div></li>
+<li id="doc_toc_entry_switch" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#switch">switch</a></div></li>
+<li id="doc_toc_entry_rem" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#rem">rem</a></div></li>
+<li id="doc_toc_entry_include" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#include">include</a></div></li>
+<li id="doc_toc_entry_parseparam" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#parseparam">parseparam</a></div></li>
+<li id="doc_toc_entry_includeonce" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#includeonce">includeonce</a></div></li>
+<li id="doc_toc_entry_set" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#set">set</a></div></li>
+<li id="doc_toc_entry_get" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#get">get</a></div></li>
+<li id="doc_toc_entry_inc" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#inc">inc</a></div></li>
+<li id="doc_toc_entry_dec" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#dec">dec</a></div></li>
+<li id="doc_toc_entry_isset" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#isset">isset</a></div></li>
+<li id="doc_toc_entry_unset" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#unset">unset</a></div></li>
+<li id="doc_toc_entry_empty" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#empty">empty</a></div></li>
+<li id="doc_toc_entry_getconf" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#getconf">getconf</a></div></li>
+<li id="doc_toc_entry_string" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#string">string</a></div></li>
+<li id="doc_toc_entry_noeval" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#noeval">noeval</a></div></li>
+<li id="doc_toc_entry_eval" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#eval">eval</a></div></li>
+<li id="doc_toc_entry_eval_php" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#eval_php">eval_php</a></div></li>
+<li id="doc_toc_entry_evalphp" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#evalphp">evalphp</a></div></li>
+<li id="doc_toc_entry_include_php" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#include_php">include_php</a></div></li>
+<li id="doc_toc_entry_array" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#array">array</a></div></li>
+<li id="doc_toc_entry_new" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#new">new</a></div></li>
+<li id="doc_toc_entry_try" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#try">try</a></div></li>
+<li id="doc_toc_entry_throw" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#throw">throw</a></div></li>
+<li id="doc_toc_entry_dont_cache" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#dont_cache">dont_cache</a></div></li>
+<li id="doc_toc_entry_cached" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#cached">cached</a></div></li>
+<li id="doc_toc_entry_crand" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#crand">crand</a></div></li>
+<li id="doc_toc_entry_random" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#random">random</a></div></li>
+<li id="doc_toc_entry_redirect" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#redirect">redirect</a></div></li>
+<li id="doc_toc_entry_executedtime" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#executedtime">executedtime</a></div></li>
+<li id="doc_toc_entry_dumpvar" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#dumpvar">dumpvar</a></div></li>
+<li id="doc_toc_entry_exit" class="doc_toc_type_function" ><div class="doc_toc_title_entry"><a href="#exit">exit</a></div></li>
+<li id="doc_toc_entry_reduce_space" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#reduce_space">reduce_space</a></div></li>
+<li id="doc_toc_entry_noreduce_space" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#noreduce_space">noreduce_space</a></div></li>
+<li id="doc_toc_entry_createdir" class="doc_toc_type_pseudofunction" ><div class="doc_toc_title_entry"><a href="#createdir">createdir</a></div></li>
+</ul></div><div class="doc_toc_bloc" id="blocidtoc_3">
+<div class="doc_toc_title_bloc">Les fonctions de listes</div><ul id="bloculid_3">
+<li id="doc_toc_entry_Prsentationdesfonctionsdeliste" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Prsentationdesfonctionsdeliste">Présentation des fonctions de liste</a></div></li>
+<li id="doc_toc_entry_Lesslecteursdeprsentationdeslistes" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lesslecteursdeprsentationdeslistes">Les sélecteurs de présentation des listes</a></div></li>
+</ul></div><div class="doc_toc_bloc" id="blocidtoc_4">
+<div class="doc_toc_title_bloc">La gestion des langues</div><ul id="bloculid_4">
+<li id="doc_toc_entry_Lespagesnoncaches" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lespagesnoncaches">Les pages non cachées</a></div></li>
+<li id="doc_toc_entry_Lespagescaches" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Lespagescaches">Les pages cachées</a></div></li>
+<li id="doc_toc_entry_Gestiondeslanguesmthode1" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Gestiondeslanguesmthode1">Gestion des langues: méthode 1</a></div></li>
+<li id="doc_toc_entry_Gestiondeslanguesmthode2" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Gestiondeslanguesmthode2">Gestion des langues: méthode 2</a></div></li>
+<li id="doc_toc_entry_Gestiondeslanguesmthode3" class="doc_toc_type_help" ><div class="doc_toc_title_entry"><a href="#Gestiondeslanguesmthode3">Gestion des langues: méthode 3</a></div></li>
+</ul></div></div></div>
+
+</td>
+<td style="vertical-align: top;"><div id="docmenu">
+<ul>
+  <li><a href="index.html">Modules</a></li>
+  <li><a href="functions.html">Fonctions</a></li>
+</ul>
+</div>
+
+</td>
+  </tr>
+</table>    
+<div class="doc_linktop"></div>
+<div id="bloccontent"><div class="text_bloc doc_bloc" id="blocidcontent_1">
+<div class="doc_entry" id="doc_entry_Lestemplates"><div class="doc_title_entry"><a id="Lestemplates"></a>Les templates</div><div id="entryid_1" class="content doc_content"><p>Templeet est un moteur de templates. Les templates se trouvent dans le répertoire "template" à la racine de l'installation de Templeet. Les URL accédées ont leur contrepartie dans le repertoire "template".</p>
+<p>Si Temnpleet est installé à la racine de http://example.com/ en accédant à cette même URL c'est le fichier "template/index.html" qui sera utilisé pour construire la page. Si l'URL appelée est http://example.com/test/mapage.html alors le fichier utilisé sera "template/test/mapage.html".<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lestemplatesgnrique"><div class="doc_title_entry"><a id="Lestemplatesgnrique"></a>Les templates générique</div><div id="entryid_2" class="content doc_content"></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Syntaxe"><div class="doc_title_entry"><a id="Syntaxe"></a>Syntaxe</div><div id="entryid_3" class="content doc_content"><p>Dans un template les fonctions écrites en Templeet seront évaluées, le reste ne sera pas modifié.  	Une fonction Templeet est précédée du caractère tilde : &#126; et les paramètres sont passés entre 	parenthèse séparés par des virgules.</p>
+<pre class="doc_code code">bla bla     <span style="color: rgb(255, 0, 0);">&lt;-- ce texte sera renvoyé tel quel</span><br>&#126;time()	    <span style="color: rgb(255, 0, 0);">&lt;-- ceci est une fonction Templeet</span> <br>&#126;cuthtml('"Bonjour, &lt;b&gt;&lt;u&gt;Le Monde!&lt;/u&gt;&lt;/b&gt;", hurla l\'écho.',15)	  <span style="color: rgb(255, 0, 0);">&lt;-- ceci est une fonction Templeet avec deux paramètres</span></pre>
+<p>Les fonctions Templeet placées en paramètre d'une autre fonction Templeet n'ont pas besoin d'être précédées du tilde:</p>
+<pre class="doc_code code">&#126;rem(             <span style="color: rgb(255, 0, 0);">                 &lt;-- ceci est une fonction Templeet dans le corps du template. </span><br>                                       <span style="color: rgb(255, 0, 0);">Le tilde est nécessaire</span><br>  now=time(),                      <span style="color: rgb(255, 0, 0);">&lt;-- now=time() est un paramètre de la fonction rem</span><br>                  <span style="color: rgb(255, 0, 0);">                     Le tilde n'est pas nécessaire</span><br><br>  t="now est égal à &#126;string(now)"  <span style="color: rgb(255, 0, 0);">&lt;-- la fonction string est à l'intérieur d'une chaîne</span><br>                                       <span style="color: rgb(255, 0, 0);">Le tilde est nécessaire</span><br>)<br></pre>
+<p>La plupart des fonctions PHP qui ne prennent pas de paramètre par référence, peuvent être appelées directement dans Templeet:<br></p>
+<pre class="doc_code code">&#126;md5("Les sanglots longs des violons de l'automne")    =&gt;	  bd5a0565059a60f304f93926daecef06</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lesvariables"><div class="doc_title_entry"><a id="Lesvariables"></a>Les variables</div><div id="entryid_4" class="content doc_content"><p>Les variables sont identifiées par des chaînes de caractères commençant par une lettre ou un "underscore" _ et suivi éventuellement de caractères alphanumériques.<br></p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp; a=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 0, 0);">&lt;- a est un nom de variable valide</span><br>&nbsp; 8xx=9;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 0, 0);">&lt;- 8xx n'est PAS un nom de variable valide</span><br>)<br></pre>
+<p><br>La portée des variables est globale par défaut. On peut limiter la portée des variables soit à une fonction soit à un fichier include.<br></p>
+<ul>
+<li>les variables locales à une fonction sont précédées du caractère '<strong>#</strong>'</li>
+<li>les variables locales à un fichier include sont précédées du caractère '<strong>$</strong>'</li>
+</ul>
+<p>&nbsp;Exemple de variable locale à une fonction:<br></p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp;&nbsp; function factorielle(#n)<br>&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(#n==1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #n*factorielle(#n-1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp; }<br>)<br><br>la factorielle de 5 est : &#126;factorielle(5)<br></pre>
+<p>Exemple de variable locale à in fichier inclus:<br></p>
+<p>Le fichier à inclure&nbsp; "fichierinclus.tmpl" :</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp; $x="dans le fichier inclus";<br>)<br>Dans fichierinclus.tmpl: <br>x: &#126;string(x)<br>$x: &#126;string($x)</pre>
+<p>Le template:</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp;&nbsp; x="variable globale";<br>&nbsp;&nbsp; $x="variable locale au template principal";<br>)<br><br>Avant include:<br>x: &#126;string(x)<br>$x: &#126;string($x)<br><br>&#126;include("fichierinclus.tmpl") <br><br>Après include:<br>x: &#126;string(x)<br>$x: &#126;string($x)</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">Avant include:<br>x: variable globale<br>$x: variable locale au template principal<br><br>Dans fichierinclus.tmpl: <br>x: variable globale<br>$x: dans le fichier inclus <br><br>Après include:<br>x: variable globale<br>$x: variable locale au template principal</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lesoprateurs"><div class="doc_title_entry"><a id="Lesoprateurs"></a>Les opérateurs</div><div id="entryid_5" class="content doc_content"><p>Les opérateurs unaires disponibles dans Templeet sont:</p>
+<blockquote>
+<table style="border: 1px solid rgb(0, 0, 0);" border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>&nbsp;-&nbsp;</td>
+<td>&nbsp;moins unaire&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;!</td>
+<td>&nbsp;non booléen</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Les opérateurs binaires sont par ordre de précédence:</p>
+<blockquote>
+<table style="border: 1px solid rgb(0, 0, 0);" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;.</td>
+<td>&nbsp;concaténation de chaînes&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;*&nbsp;</td>
+<td>&nbsp;multiplication</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;/</td>
+<td>&nbsp;division</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;%&nbsp;</td>
+<td>&nbsp;modulo</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;-</td>
+<td>&nbsp;soustraction</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;+</td>
+<td>&nbsp;addition</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&lt;&lt;&nbsp;</td>
+<td>&nbsp;décalage binaire à gauche</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&gt;&gt;</td>
+<td>&nbsp;décalage binaire à droite</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&lt;=</td>
+<td>&nbsp;inférieur ou égal</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&gt;=</td>
+<td>&nbsp;supérieur ou égal</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&lt;</td>
+<td>&nbsp;inférieur</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&gt;</td>
+<td>&nbsp;supérieur</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;===&nbsp;</td>
+<td>&nbsp;égalité stricte de contenu et de type&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;==</td>
+<td>&nbsp;égalité</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;!==</td>
+<td>&nbsp;différence stricte</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;!=</td>
+<td>&nbsp;différence</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&amp;&amp;</td>
+<td>&nbsp;et logique</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;||</td>
+<td>&nbsp;ou logique</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&amp;</td>
+<td>&nbsp;&amp; binaire</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;^</td>
+<td>&nbsp;ou exclusif binaire</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;|</td>
+<td>&nbsp;ou binaire</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;.=</td>
+<td>&nbsp;concaténation/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;*=</td>
+<td>&nbsp;multiplication/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;/=</td>
+<td>&nbsp;division/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;%=</td>
+<td>&nbsp;modulo/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;-=</td>
+<td>&nbsp;soustraction/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;+=</td>
+<td>&nbsp;addition/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;&amp;=</td>
+<td>&nbsp;et bianire/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;^=</td>
+<td>&nbsp;ou exclusif binaire/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;|=</td>
+<td>&nbsp;ou binaire/affectation</td>
+</tr>
+<tr>
+<td style="text-align: center;" align="center">&nbsp;=</td>
+<td>&nbsp;affectation</td>
+</tr>
+</tbody>
+</table>
+</blockquote></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Leschanesetlesblocsdinstructions"><div class="doc_title_entry"><a id="Leschanesetlesblocsdinstructions"></a>Les chaînes et les blocs d'instructions</div><div id="entryid_6" class="content doc_content"><p><strong>Apostrophes et guillemets :</strong></p>
+<p>Dans le langage Templeet les apostrophes <strong>'</strong> ou les guillemets  	<strong>"</strong> délimitent des chaînes de caractères. Les instructions Templeet  	étant interprétées dans les chaînes, celles-ci peuvent contenir aussi bien du texte que des instructions. Par exemple :</p>
+<pre class="doc_code code">&#126;if(10&gt;1,<br><strong>    '</strong>Voici le premier bloc délimité par des apostrophes<br>      &#126;if(empty(foo), <br>           foo=10,<br> <strong>          "</strong>Un autre bloc délimité par des guillemets<strong>"</strong><br>         )<br>    <strong>'</strong>,<br>    <strong>'</strong>Voici un second bloc délimité par des apostrophes<strong>'</strong><br>    )<br></pre>
+<p>Au cas où la chaîne devrait contenir le délimiteur, celui-ci doit être échappé avec le caractère <strong>\</strong> :</p>
+<pre class="doc_code code">'Vous qui ne savez pas combien l\'enfance est belle,' <span style="color: rgb(255, 0, 0);">&lt;- la chaîne est délimitée par des apostrophes,</span><br><span style="color: rgb(255, 0, 0);">                                                         l'apostrophe dans la chaîne doit être échappée</span><br><span style="color: rgb(0, 0, 0);"><br>"</span>Enfant ! n'enviez point notre âge de douleurs,"      <span style="color: rgb(255, 0, 0);">&lt;- la chaîne est délimitée par des guillemets</span><br>                                                         <span style="color: rgb(255, 0, 0);">l'apostrophe n'a pas besoin d'être échappée</span></pre>
+<p><strong>Chaînes &lt;![nomdelachaine[ ... ]</strong><strong>nomdelachaine</strong><strong>]&gt; :</strong></p>
+<p>Toutefois, lorsque vous avez à implémenter des algorithmes plus  	complexes qui nécessitent des conditions imbriquées ou que vous avez besoinde manipuler des chaînes qui contiennent des apostrophes et des guillemets, il devient  	difficile de repérer le début et la fin d'une chaîne.<br> Pour faire face à ce problème vous pouvez utiliser une autre syntaxe 	pour délimiter les chaînes: <strong>&lt;![</strong><strong>nomdelachaine</strong><strong>[</strong> ... 	<strong>]</strong><strong>nomdelachaine</strong><strong>]&gt;</strong>. Ces chaînes de caractères 	sont des chaînes au même titre que celles délimitées par des apostrophes et des guillemets. 	Seule la délimitation de ces chaînes changent. On notera que dans ces chaînes, 	ni les guillemets ni les apostrophes n'ont besoin d'être échappés. <br></p>
+<p>Exemple :</p>
+<pre class="doc_code code">&#126;if(10&gt;1,<br>     &lt;![bloc1[<br>        Voici le premier bloc nommé "bloc1"<br>        &#126;if(empty(foo),<br>             foo=10,<br>             &lt;![foo[ Un autre bloc nommé "foo" ]foo]&gt;<br>           )<br>     ]bloc1]&gt;,<br> &lt;![foo[ Encore un autre bloc nommé "foo" ]foo]&gt;<br>)<br></pre>
+<p><strong>Accolades { et } :</strong></p>
+<p>Les blocs définis par des accolades ont un fonctionnement particulier.</p>
+<p>Les instructions sont séparées par des <strong>virgules</strong> "<strong>,</strong>" ou des <strong>points-virgules ";"</strong>. Comme dans l'exemple ci-dessous :</p>
+<pre class="doc_code code">&#126;string(<br>    {<br>      i=2,<br>      j=3;<br>      j;<br>      i+j<br>    }<br>)<br></pre>
+<p>Le rendu de ce script sera :</p>
+<pre class="doc_code code">5<br></pre>
+<p>Comme vous pouvez le remarquer la valeur 3 renvoyée par j  	n'est pas affichée. En effet, <strong>seule la dernière instruction du bloc </strong> est retournée.</p>
+<div class="warning">
+<div class="txt">Les accolades ne peuvent être utilisées que en paramètre  	d'une fonction Templeet. Au besoin vous pouvez utiliser les fonctions <em>string</em> ou <em>rem</em> pour envelopper un bloc d'accolades.</div>
+</div></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lescommentaires"><div class="doc_title_entry"><a id="Lescommentaires"></a>Les commentaires</div><div id="entryid_7" class="content doc_content"><p>Il est possible d'intégrer des commentaires dans vos scripts 	dont le contenu ne sera pas traité par Templeet (contrairement 	à la commande <a href="#rem">&#126;rem()</a>)</p>
+<p>Pour cela il faut soit utiliser les caractères <em>//</em> ou 	le bloc <em>/* ... */</em> à l'intérieur d'une instruction Templeet.</p>
+<p>Exemple :</p>
+<pre class="doc_code code">&#126;string(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Ceci est un commentaire d'une seule ligne<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ceci est un commentaire <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sur plusieurs lignes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */<br>)</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_LesvariablesducurdeTempleet"><div class="doc_title_entry"><a id="LesvariablesducurdeTempleet"></a>Les variables du cœur de Templeet</div><div id="entryid_8" class="content doc_content"><ul>
+<li><strong>all_lang</strong>: tableau des langues dans lesquelles existe la page vue.</li>
+</ul>
+<p class="doc_tip tip">Pour plus de précision voir la <a href="#Gestiondeslanguesmthode1">gestion des langues</a></p>
+<ul>
+<li><strong>HTTP_Content_type</strong>: définit l'entête HTTP Content-type à retourner</li>
+<li><strong>HTTP_charset</strong>: définit l'entête HTTP charset à associer au Content-type</li>
+<li><strong>HTTP_filename</strong>: définit une entête HTTP "Content-disposition: attachment;"</li>
+<li><strong>HTTP_nocache</strong>: si diifférent de 0 les entêtes de désactivation des caches navigateurs et des proxies sont envoyées.<br></li>
+</ul>
+<p class="doc_warning warning">La variable HTTP_nocache est gérée par la fonction <a href="#dont_cache">dont_cache()</a> . Elle n'est donc normalement pas utilisée directement.<br></p>
+<p>&nbsp;</p>
+<ul>
+</ul></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lesobjets"><div class="doc_title_entry"><a id="Lesobjets"></a>Les objets</div><div id="entryid_9" class="content doc_content"><p>Les objets PHP peuvent être utilisés directement dans Templeet. Toutefois ils ne peuvent être déclarés avec une syntaxe Templeet.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp;&nbsp; eval_php(<br>&nbsp;&nbsp;&nbsp;&nbsp; &lt;![PHP[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class ma_classe {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private $var;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function __construct($x) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;var=$x;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function plus($y)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return $this-&gt;var+$y;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp; ]PHP]&gt;);<br><br>&nbsp; objet=new ma_classe(3);<br><br>)<br>&#126;string(objet-&gt;plus(4))</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">7</pre>
+<p>&nbsp;</p>
+<p class="doc_tip tip">Voir également la fonction <a href="#new">new</a><br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lecachedepages"><div class="doc_title_entry"><a id="Lecachedepages"></a>Le cache de pages</div><div id="entryid_10" class="content doc_content"><p>Le cache de page permet de servir une page sans que celle ci soit recalculée à chaque fois. Ce système permet d'avoir des gains en performance importants. Si en plus Templeet est configuré pour gérer l'erreur 404 et que le cache de page se trouve à la racine de Templeet alors la performance est maximale. L'installeur tentera de configurer Templeet de cette manière chaque fois que c'est possible. Si ça ne l'est pas alors il donne des indications pour configurer le serveur de manière à ce que cela soit possible.</p>
+<p class="doc_warning warning">Pour la majorité des fonctions la configuration du cache n'a pas d'importance. Les autres mode de fonctionnement ne présentant aucune difficulté particulière, il sera supposé dans la suite de la documentation que le cache de page est configuré de manière optimale (gestion de l'erreur 404 et cache à la racine de Templeet)<br></p>
+<p><strong>Principe général de fonctionnement du cache de page de Templeet</strong>: quand une page cachable est demandée, si Apache la trouve elle est retournée immédiatement sans appel à Templeet d'où un gain en performances très important. Si la page demandée n'existe pas alors Templeet calcule la page, la met en cache pour les requêtes suivantes et la retourne au navigateur.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lesfonctionsutilisateur"><div class="doc_title_entry"><a id="Lesfonctionsutilisateur"></a>Les fonctions utilisateur</div><div id="entryid_11" class="content doc_content"><p>Des fonctions utilisateur peuvent être définies et être appelées de la même manière que les fonctions de bibilothèque. La syntaxe est la suivante:</p>
+<pre class="doc_code code">&#126;rem(<br>   function mafonction(#parametre1,#parametre2)<br>     {<br>       "paramètre 1:".#parametre1." paramètre 2:".#parametre2;<br>     };<br>)<br><br>&#126;mafonction("un","deux")<br><br></pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">paramètre 1:un paramètre 2:deux</pre>
+<p>Les fonctions peuvent également être définie à l'aide de la fonction <a href="defunc.html#defunc">defunc</a> .<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div></div><div class="text_bloc doc_bloc" id="blocidcontent_2">
+<div class="doc_entry" id="doc_entry_if"><div class="doc_title_entry"><a id="if"></a>if</div><div id="entryid_12" class="content doc_content"><p>Cette fonction effectue un test et retourne le 2ème argument si le test est vrai, sinon et s'il existe, le 3ème argument est retourné.</p>
+<pre class="doc_code code">&#126;if(1&lt;2,"c'est vrai!","c'est faux!")</pre>
+<p>L'exemple précédent retournera:</p>
+<pre class="doc_code code">c'est vrai! <br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_while"><div class="doc_title_entry"><a id="while"></a>while</div><div id="entryid_13" class="content doc_content"><p>Cette commande prend 2 arguments, elle évalue le 2ème tant que le 1er retourne vrai.</p>
+<pre class="doc_code code">&#126;rem(counter=1)<br>&#126;while(counter&lt;=3,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'on compte ... &#126;string(counter)<br>&#126;rem(counter=counter+1)'<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) <br><br></pre>
+<p>Comme souvent, il est possible d'écrire le même programme de différentes manières:</p>
+<pre class="doc_code code">&#126;string(<br>&nbsp; {<br>&nbsp;&nbsp;&nbsp; counter=1;<br>&nbsp;&nbsp;&nbsp; while(counter&lt;=3,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'on compte ... '.counter.'\n'.rem(counter+=1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) <br>&nbsp; })&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Avertissement"><div class="doc_title_entry"><a id="Avertissement"></a>Avertissement</div><div id="entryid_14" class="content doc_content"><p class="doc_warning warning">Dans un souci de concision les exemples donnés à partir d'ici seront des extraits de code. En particulier les exemples pourront être donnés sans la syntaxe complète avec tilde mais seront généralement supposés être des paramètres de fonctions Templeet. <br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_for"><div class="doc_title_entry"><a id="for"></a>for</div><div id="entryid_15" class="content doc_content"><p>Cette fonction prend 4 arguments, elle évalue le 4ème tant que le 2ème retourne vrai. Le premier argument est le code d'initialisation, le 3ème celui d'incrémentation.</p>
+<pre class="doc_code code">&#126;for(counter=1,counter&lt;=3,counter+=1,<br>&nbsp; 'on compte ... &#126;string(counter) '<br>)</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">on compte ... 1 on compte ... 2 on compte ... 3 </pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_foreach"><div class="doc_title_entry"><a id="foreach"></a>foreach</div><div id="entryid_16" class="content doc_content"><p>La fonction foreach permet de faire une itération sur un tableau ou un objet. Elle peut prendre 3 ou 4 arguments.</p>
+<ul>
+<li>3 arguments: foreach(objet,variable_de_valeur,expression)</li>
+<li>4 arguments: foreach(objet,variable_de_valeur,variable_de_clef,expression)</li>
+</ul>
+<p>Exemple avec 3 arguments:</p>
+<pre class="doc_code code">&#126;foreach(array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef1" =&gt; "valeur1",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef2" =&gt; "valeur2",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef3" =&gt; "valeur3"),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; valeur,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "la valeur est &#126;string(valeur) &lt;br /&gt;"<br>)</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">la valeur est valeur1 <br>la valeur est valeur2 <br>la valeur est valeur3<br></pre>
+<p>Exemple avec 4 arguments:</p>
+<pre class="doc_code code">&#126;foreach(array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef1" =&gt; "valeur1",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef2" =&gt; "valeur2",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "clef3" =&gt; "valeur3"),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; valeur,clef,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "la clef est &#126;string(clef) la valeur est &#126;string(valeur) &lt;br /&gt;"<br>)<br></pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">la clef est clef1 la valeur est valeur1 <br>la clef est clef2 la valeur est valeur2 <br>la clef est clef3 la valeur est valeur3<br></pre>
+<p>Exemple avec un objet:</p>
+<pre class="doc_code code">&#126;rem(&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc=new('DOMDocument');<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc-&gt;loadXML(&lt;![XML[&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;!DOCTYPE doc&gt;<br>&lt;doc&gt;<br>&lt;elt1&gt;contenu 1&lt;/elt1&gt;<br>&lt;elt2&gt;<br>&nbsp;&nbsp; &lt;un_element_inclus&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp; contenu inclus<br>&nbsp;&nbsp; &lt;/un_element_inclus&gt;<br>&lt;/elt2&gt;<br>&lt;elt3&gt;&lt;/elt3&gt;<br>&lt;elt1&gt;&lt;/elt1&gt;<br>&lt;/doc&gt;<br><br>]XML]&gt;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xpath =new('DOMXPath',doc);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; elements = xpath-&gt;query("//doc/*");<br>)<br><br>&#126;foreach(elements,valeur,clef,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "numéro du nœud: &#126;string(clef) nom du nœud: &#126;string(valeur-&gt;nodeName)&lt;br /&gt;"<br>)</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">numéro du nœud: 0 nom du nœud: elt1<br>numéro du nœud: 1 nom du nœud: elt2<br>numéro du nœud: 2 nom du nœud: elt3<br>numéro du nœud: 3 nom du nœud: elt1<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_break"><div class="doc_title_entry"><a id="break"></a>break</div><div id="entryid_17" class="content doc_content"><p>La fonction break permet de sortir immédiatement d'une boucle while, for ou foreach.</p>
+<pre class="doc_code code">&#126;rem(<br>  arr = array('un', 'deux', 'trois', 'quatre', 'stop', 'cinq');<br>)<br>&#126;foreach(arr,value,<br>  {<br>    if(value=='stop',break());<br>    value."\n";<br>  }<br> )</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">un<br>deux<br>trois<br>quatre<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_switch"><div class="doc_title_entry"><a id="switch"></a>switch</div><div id="entryid_18" class="content doc_content"><p>Cette commande effectue une série de tests. Les arguments sont passés deux par deux. Le premier d'une paire est un test, le deuxième est la valeur à renvoyer si le test est vrai. L'évaluation de switch s'arrête au premier test qui retourne vrai. Il est possible de renvoyer une valeur par défaut si tous les tests ont échoué,  il suffit de la mettre comme dernier argument. <br><br></p>
+<pre class="doc_code code">x=1;<br>switch(<br>&nbsp;&nbsp; &nbsp;x&lt;0,"x est négatif",<br>&nbsp;&nbsp; &nbsp;x&gt;0,"x est positif",<br>&nbsp;&nbsp; &nbsp;"x est nul"<br>)<br><br></pre>
+<p><br> L'exemple précédent retournera "x est positif".</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_rem"><div class="doc_title_entry"><a id="rem"></a>rem</div><div id="entryid_19" class="content doc_content"><p>La fonction rem a pour propriété de ne rien retourner. Toutefois tous les paramètres sont évalués. Cette fonction est donc pratique pour mettre du code Templeet sans se soucier de ce qui est retourné. <br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_include"><div class="doc_title_entry"><a id="include"></a>include</div><div id="entryid_20" class="content doc_content"><p>Cette fonction permet d'inclure un autre template. Par défaut elle utilise le répertoire du template père.<br><br>Des arguments peuvent être passés à la commande &#126;include(), et ils peuvent être utilisés dans le template inclus grâce à la commande &#126;parseparam().<br><br>Exemple :</p>
+<p>Contenu du fichier "index.html" :<br></p>
+<pre class="doc_code code">&#126;include('fichier.tmpl',"1er argument", 10)<br></pre>
+<p>Contenu du fichier "fichier.tmpl" :<br></p>
+<pre class="doc_code code">Le premier argument est : &#126;parseparam(1)<br>Le second argument est : &#126;parseparam(2)<br></pre>
+<p>Le résultat est :<br></p>
+<pre class="doc_code code">Le premier argument est : 1er argument<br>Le second argument est : 10<br></pre>
+<p>Un template pourra récupérer les arguments passés au moment de l'include. Dans l'exemple ci dessus &#126;parseparam(1) retourne "1er argument" (sans les "), et &#126;parseparam(2) retourne "10" (sans les ").</p>
+<p>Un template inclus peut également retourner un tableau.</p>
+<p>Exemple:</p>
+<p>Contenu du fichier "index.html":<br></p>
+<pre class="doc_code code">&#126;rem(<br>  // initialiser la variable montableau avec le tableau retourné par le fichier inclus.<br>   montableau=include("fichier.tmpl");<br>)</pre>
+<p>Contenu du fichier "fichier.tmpl":</p>
+<pre class="doc_code code">&#126;array(<br>  "une clef" =&gt; "une valeur",<br>  "une autre clef" =&gt; "une autre valeur"<br>)<br></pre>
+<p>&nbsp;</p>
+<p class="doc_warning warning">Lorsqu'un fichier inclus retourne un tableau il faut être attentif à ne pas laisser de caractères "espace" ou "retour chariot" en fin de fichier sinon le contenu est transformé en chaîne de caractères.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_parseparam"><div class="doc_title_entry"><a id="parseparam"></a>parseparam</div><div id="entryid_21" class="content doc_content"><p>Cette fonction est liée à la fonction include. Elle permet de récupérer les paramètres passé lors du &#126;include(). Voir <a href="#include">ci-dessus</a>.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_includeonce"><div class="doc_title_entry"><a id="includeonce"></a>includeonce</div><div id="entryid_22" class="content doc_content"><p>Cette fonction est identique à la fonction <a href="#include">include</a> si ce n'est que l'inclusion effective ne se fait qu'une seule fois si la fonction est appelée plusieurs fois.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_set"><div class="doc_title_entry"><a id="set"></a>set</div><div id="entryid_23" class="content doc_content"><p>Les fonctions set et &#126;get sont obsolètes en Templeet 4. La syntaxe pour manipuler les variables est maintenant la suivante:<br></p>
+<pre class="doc_code code">x=1;<br>y=x;<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_get"><div class="doc_title_entry"><a id="get"></a>get</div><div id="entryid_24" class="content doc_content"><p>Voir la fonction <a href="#set">set</a>.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_inc"><div class="doc_title_entry"><a id="inc"></a>inc</div><div id="entryid_25" class="content doc_content"><p>La fonction inc est obsolète en Templeet 4. La syntaxe utilisée pour incrémenter est maintenant la suivante:</p>
+<pre class="doc_code code">x+=1<br>ou<br>x=x+1<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_dec"><div class="doc_title_entry"><a id="dec"></a>dec</div><div id="entryid_26" class="content doc_content"><p>La fonction dec est obsolète en Templeet 4. La syntaxe utilisée pour décrémenter est maintenant la suivante:</p>
+<pre class="doc_code code">x-=1<br>ou<br>x=x-1<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_isset"><div class="doc_title_entry"><a id="isset"></a>isset</div><div id="entryid_27" class="content doc_content"><p>La fonction isset permet de tester l'existence d'une variable.</p>
+<p>Exemple:<br></p>
+<pre class="doc_code code">isset(x):&#126;isset(x)<br>&#126;rem(x=1)<br>isset(x):&#126;isset(x)<br>&#126;unset(x)<br>isset(x):&#126;isset(x)<br><br></pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">isset(x):<br>isset(x):1<br>isset(x):</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_unset"><div class="doc_title_entry"><a id="unset"></a>unset</div><div id="entryid_28" class="content doc_content"><p>La fonction unset permet de supprimer une variable. Voir l'exemple de la fonction <a href="#isset">isset</a>.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_empty"><div class="doc_title_entry"><a id="empty"></a>empty</div><div id="entryid_29" class="content doc_content"><p>Cette fonction permet de savoir si une expression est vide. Une expression est dite vide si elle est égale à 0, à une chaîne vide ou à NULL.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">empty(1):&#126;empty(1)<br>empty(0):&#126;empty(0)<br>empty("abcd"):&#126;empty("abcd")<br>empty(""):&#126;empty("")<br>empty(NULL):&#126;empty(NULL)</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">empty(1):<br>empty(0):1<br>empty("abcd"):<br>empty(""):1<br>empty(NULL):1</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_getconf"><div class="doc_title_entry"><a id="getconf"></a>getconf</div><div id="entryid_30" class="content doc_content"><p>Cette fonction permet d'obtenir la valeur des variables de configuration de Templeet définies dans templeet/config.php et templeet/serverconf.php.</p>
+<p>Exemple pour connaitre le répertoire où Templeet a été installé:</p>
+<pre class="doc_code code">Le répertoire d'installation de Templeet est: &#126;getconf('dir_installed')<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_string"><div class="doc_title_entry"><a id="string"></a>string</div><div id="entryid_31" class="content doc_content"><p>La fonction string retourne une chaine de caractère correspondant à la concaténation de ses paramètres. Typiquement elle est utilisée pour récupérer la valeur d'une variable au milieu d'un texte.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;rem(<br>  x=1;<br>)<br>La valeur de x est &#126;string(x)<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_noeval"><div class="doc_title_entry"><a id="noeval"></a>noeval</div><div id="entryid_32" class="content doc_content"><p>La fonction noeval est une fonction neutre. Le code contenu dedans n'est pas exécuté. Cette fonction sert essentiellement à des fins de debugage.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_eval"><div class="doc_title_entry"><a id="eval"></a>eval</div><div id="entryid_33" class="content doc_content"><p>Cette fonction permet d'évaluer du code Templeet. Ainsi du code Templeet peut être généré dynamiquement dans une variable, puis évalué plus tard.</p>
+<pre class="doc_code code">&#126;eval('&#126;rem(une_variable=10) &#126;string(une_variable)')<br></pre>
+<p>Cette commande mettra "10" dans la variable "une_variable", puis retournera le contenu de cette même variable.<br></p>
+<p class="doc_tip tip">Voir également les <a href="defunc.html#anonfunc">fonctions anonymes</a>.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_eval_php"><div class="doc_title_entry"><a id="eval_php"></a>eval_php</div><div id="entryid_34" class="content doc_content"><p>La fonction evalphp permet d'insérer du code PHP dans un template.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp;&nbsp; eval_php(<br>&nbsp;&nbsp;&nbsp;&nbsp; &lt;![PHP[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class ma_class {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private $var;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function __construct($x) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;var=$x;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function plus($y)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return $this-&gt;var+$y;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp; ]PHP]&gt;);<br><br>&nbsp; objet=new ma_class(3);<br><br>)<br>&#126;string(objet-&gt;plus(4))</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_evalphp"><div class="doc_title_entry"><a id="evalphp"></a>evalphp</div><div id="entryid_35" class="content doc_content"><p>La fonction evalphp est obsolète. Elle a été remplacée par <a href="#eval_php">eval_php</a>.<br></p>
+<p>&nbsp;</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_include_php"><div class="doc_title_entry"><a id="include_php"></a>include_php</div><div id="entryid_36" class="content doc_content"><p>La fonction include_php permet de charger un fichier php.</p>
+<p>Exemple:</p>
+<p>Contenu du fichier include.php:</p>
+<pre class="doc_code code">&lt;?php<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class ma_class {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private $var;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function __construct($x) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;var=$x;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function plus($y)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return $this-&gt;var+$y;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>?&gt;</pre>
+<p>Contenu du template:</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp; include_php(getconf("templatedir").includedir."/include.php");<br>&nbsp; objet=new ma_class(3);<br>)<br>&#126;string(objet-&gt;plus(4))</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_array"><div class="doc_title_entry"><a id="array"></a>array</div><div id="entryid_37" class="content doc_content"><p>Cette fonction permet de créer un tableau de données.<br><br>Exemple:</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp; tab=array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "foo"=&gt;1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "bar"=&gt;2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<br>)<br><br>la valeur de tab["foo"] est: &#126;string(tab["foo"])<br>la valeur de tab["bar"] est: &#126;string(tab["bar"])</pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">la valeur de tab["foo"] est: 1<br>la valeur de tab["bar"] est: 2</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_new"><div class="doc_title_entry"><a id="new"></a>new</div><div id="entryid_38" class="content doc_content"><p>Cette fonction permet de créer un nouvel objet. Des exemples sont donnés dans la description des fonctions <a href="#eval_php">eval_php</a> et <a href="#include_php">include_php</a><br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_try"><div class="doc_title_entry"><a id="try"></a>try</div><div id="entryid_39" class="content doc_content"><p>Cette permet de gérer les exceptions. Le premier paramètre de la fonction est le code à essayer. Ensuite les paramètres sont passés deux par deux. Le premier de ces deux est le nom de l'exception et le deuxième, le code à exécuter pour cette exception.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;eval_php(&lt;![PHP[<br>class MonException1 extends Exception { }<br>class MonException2 extends Exception { }<br>class MonException3 extends Exception { }<br>]PHP]&gt;) <br><br>&#126;try(<br>&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw(new MonException2());<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "No exception"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "MonException1",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "catch MonException1\n";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "MonException2",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "catch MonException2\n";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<br>&nbsp;&nbsp;&nbsp;&nbsp; },<br>&nbsp;&nbsp;&nbsp;&nbsp; "MonException3",<br>&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "catch MonException3\n";<br>&nbsp;&nbsp;&nbsp;&nbsp; })<br><br></pre>
+<p>&nbsp;</p>
+<p>Le résultat est:</p>
+<pre class="doc_code code">catch MonException2</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_throw"><div class="doc_title_entry"><a id="throw"></a>throw</div><div id="entryid_40" class="content doc_content"><p>Cette fonction permet de déclencher une exception. Voir l'exemple avec la fonction <a href="#try">try</a>.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_dont_cache"><div class="doc_title_entry"><a id="dont_cache"></a>dont_cache</div><div id="entryid_41" class="content doc_content"><div id="entryid_1" class="content doc_content">
+<p>Cette fonction prend un argument optionnel, elle permet de désactiver la mise en cache pour une page.<br><br> Sans argument ou avec un argument non nul, Templeet envoie des entêtes HTTP qui permettent des désactiver les caches des navigateurs et des éventuels proxys. <br> Si l'argument passé est 0 alors les entêtes ne sont pas envoyées.</p>
+</div>
+<p><a href="cache.html#top"></a></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_cached"><div class="doc_title_entry"><a id="cached"></a>cached</div><div id="entryid_42" class="content doc_content"><p>La fonction cached sert à savoir si la page doit être mise en cache ou pas.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;if(cached(),<br>    "la page est mise dans le cache de pages",<br>    "la page n'est pas mise dans le cache de pages")<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_crand"><div class="doc_title_entry"><a id="crand"></a>crand</div><div id="entryid_43" class="content doc_content"><p>Cette fonction est identique à la fonction <a href="http://fr.php.net/manual/fr/function.mt-rand.php">mt_rand</a> excepté que le random retourné est cryptographique.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_random"><div class="doc_title_entry"><a id="random"></a>random</div><div id="entryid_44" class="content doc_content"><p>Cette fonction retourne une chaîne de caractères aléatoires composée de chiffres et de lettres (minuscules et majuscules).</p>
+<p>Elle prend un paramètre qui est la longueur de la chaîne à retourner.</p>
+<p class="doc_tip tip">La chaîne aléatoire est cryptographiquement sure.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_redirect"><div class="doc_title_entry"><a id="redirect"></a>redirect</div><div id="entryid_45" class="content doc_content"><p>La fonction redirect envoie immédiatement un redirect HTTP.</p>
+<p>Elle prend 2 paramètres:</p>
+<ul>
+<li>L'URL de redirection</li>
+<li>le status (optionnel, 302 par défaut)</li>
+</ul>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;redirect("http://www.templeet.org/",303)<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_executedtime"><div class="doc_title_entry"><a id="executedtime"></a>executedtime</div><div id="entryid_46" class="content doc_content"><p>Cette fonction permet de connaitre le temps exprimé en secondes passé depuis le début du calcul de la page.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">executedtime: &#126;executedtime()</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_dumpvar"><div class="doc_title_entry"><a id="dumpvar"></a>dumpvar</div><div id="entryid_47" class="content doc_content"><p>La fonction dumpvar est une aide au débuggage. Elle permet de connaitre toutes les variables globales au moment de l'appel.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">&#126;print_r(dumpvar())<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_exit"><div class="doc_title_entry"><a id="exit"></a>exit</div><div id="entryid_48" class="content doc_content"><p>La fonction exit permet d'arrêter l'interprétation du template en cours en affichant un message. Typiquement elle ne sera utilisée que pour débugger.</p>
+<p>Exemple:</p>
+<pre class="doc_code code">un message<br>&#126;exit("message d'erreur")<br>un autre message<br></pre>
+<p>Le résultat est:</p>
+<pre class="doc_code code">message d'erreur</pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_reduce_space"><div class="doc_title_entry"><a id="reduce_space"></a>reduce_space</div><div id="entryid_49" class="content doc_content"><p>reduce_space est une pseudo-fonction. Sa présence dans un template indique que les espaces en début des chaînes de caractère doivent être supprimés. Cela permet d'indenter des chaînes de caractères sur plusieurs lignes sans que l'indentation interfère avec le code.</p>
+<p>La valeur par défaut est indiquée dans templeet/config.php .<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_noreduce_space"><div class="doc_title_entry"><a id="noreduce_space"></a>noreduce_space</div><div id="entryid_50" class="content doc_content"><p>Cette pseudo-fonction fait le contraire de la pseudo-fonction <a href="#reduce_space">reduce_space</a>.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_createdir"><div class="doc_title_entry"><a id="createdir"></a>createdir</div><div id="entryid_51" class="content doc_content"><p>La fonction createdir() sert a créer des répertoires de manière récursive.</p>
+<p>Elle peut prendre deux arguments :</p>
+<ul>
+<li>le nom du répertoire à créer (obligatoire)</li>
+<li>le mode de création du répertoire. Par défaut 0777 ce qui correspond au maximum de        droits possible. Toutefois le umask est vigueur est appliqué.<br></li>
+</ul>
+<p><em>Note : Cette fonction fait appel à la fonction createdir de templeet.php&nbsp; qui elle même utilise la fonction mkdir de php avec l'option de recursivité activée</em><br><br>Exemple :<br><br></p>
+<div class="code">
+<pre>&#126;createdir('plop/pika/test/')<br></pre>
+</div>
+<p><br>Si les répertoires 'plop', 'pika' n'existent pas, ils sont créés au passage.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div></div><div class="text_bloc doc_bloc" id="blocidcontent_3">
+<div class="doc_entry" id="doc_entry_Prsentationdesfonctionsdeliste"><div class="doc_title_entry"><a id="Prsentationdesfonctionsdeliste"></a>Présentation des fonctions de liste</div><div id="entryid_52" class="content doc_content"><p>Templeet comprend un certain nombre de fonctions qui gèrent des listes. 	Une liste est une suite d'élements. Une liste peut être le résultat d'une requête SQL 	ou bien les éléments d'un tableau ou encore les entrées dans un répertoire du système de fichiers.</p>
+<p>Toutes les fonctions de listes ont des paramètres qui leurs sont propres parce que un tableau ne se gère pas 	comme une base de données par exemple. Néanmoins, toutes les fonctions de listes ont en commun  	le principe de présentation des éléments. Celle-ci se fait à l'aide de sélecteurs.</p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lesslecteursdeprsentationdeslistes"><div class="doc_title_entry"><a id="Lesslecteursdeprsentationdeslistes"></a>Les sélecteurs de présentation des listes</div><div id="entryid_53" class="content doc_content"><p>Les sélecteurs sont des paramètres passés aux fonctions de liste qui permettent de déterminer le rendu de la liste. Un sélecteur se compose de deux éléments:<br></p>
+<ul>
+<li>Un type sous la forme de deux caractères en majuscule</li>
+<li>Une valeur qui sera interpretée au moment du traitement d'un état particulier de l'avancement dans le traitement de la liste<br></li>
+</ul>
+<p>L'appel d'une fonction de liste se compose de la manière suivante:</p>
+<pre class="doc_code code">&#126;fonction_de_liste(les paramètres propres à la fonction, type_selecteur_1, valeur_selecteur_1, type_selecteur_2, valeur_selecteur_2 ...)</pre>
+<p><br>Chaque fonction traite un certain nombre de sélecteurs mais pas forcément tous. Le seul sélecteur qui soit obligatoire est le sélecteur LM. Le sélecteur LM est utilisé pour traiter chacun des éléments de la liste.<br><br>Exemple dans le cas du traitement d'un tableau:<br></p>
+<pre class="doc_code code">tab_list["clef_un"]='valeur_un';<br>tab_list["clef_deux"]='valeur_deux';<br>tab_list["clef_trois"]='valeur_trois';<br><br>&#126;array_list(tab_list,0,,'LM','la clef est &#126;array_fld('key') et la valeur est &#126;array_fld('current')&lt;br /&gt;')<br></pre>
+<p><br>Le tableau 'tab_list' est créé puis listé. L'appel de cette fonction comporte juste le sélecteur LM qui a pour valeur:<br></p>
+<pre class="doc_code code">la clef est &#126;array_fld('key') et la valeur est &#126;array_fld('current')&lt;br /&gt;<br></pre>
+<p><br>La fonction &#126;array_fld() est une fonction associée à la fonction &#126;array_list(). Chaque fonction de traitement de liste a une et parfois plusieurs fonctions associées.<br><br>Ces fonctions ne peuvent être appelées qu'à l'intérieur d'un sélecteur parce qu'elles permettent d'obtenir des informations sur l'élément qui est en cours de traitement. En l'occurrence, &#126;array_fld('key') permet de connaitre la clef de l'élément du tableau en cours de traitement et &#126;array_fld('current') retourne l'élément en cours de traitement.<br><br>Le code précédent retourne donc:<br></p>
+<pre class="doc_code code">la clef est clef_un et la valeur est valeur_un<br>la clef est clef_deux et la valeur est valeur_deux<br>la clef est clef_trois et la valeur est valeur_trois<br></pre>
+<p><br>Les autres sélecteurs permettent de gérer des cas particuliers. Ainsi LF et LL sont évalués respectivement avant le premier élément et après le dernier élément.<br><br>Exemple:</p>
+<pre class="doc_code code">&#126;array_list(tab_list,0,,<br>&nbsp; 'LM','la clef est &#126;array_fld('key') et la valeur est &#126;array_fld('current')&lt;br /&gt;',<br>&nbsp; 'LF','ce sélecteur est évalué avant le premier élément&lt;br /&gt;',<br>&nbsp; 'LL','ce sélecteur est évalué après le dernier élément&lt;br /&gt;'<br>&nbsp; )<br></pre>
+<p><br>Le résultat est:</p>
+<pre class="doc_code code">ce sélecteur est évalué avant le premier élément<br>la clef est clef_un et la valeur est valeur_un<br>la clef est clef_deux et la valeur est valeur_deux<br>la clef est clef_trois et la valeur est valeur_trois<br>ce sélecteur est évalué après le dernier élément<br></pre>
+<p><br>Liste des sélecteurs:<br></p>
+<ul>
+<li>LM : évalué pour chacun des éléments.</li>
+<li>LF : évalué avant le premier élément.</li>
+<li>LL : évalué après le dernier élément.</li>
+<li>LR : évalué pour le premier élément. Si ce sélecteur est présent le sélecteur LM n'est pas évalué pour le premier élément.</li>
+<li>LN : évalué pour le dernier élément. Si ce sélecteur est présent le sélecteur LM n'est pas évalué pour le dernier élément.</li>
+<li>LS : évalué entre chaque élément.</li>
+<li>LD : évalué dans le cas où la liste ne contient aucun élément.</li>
+<li>L1 : évalué dans le cas où la liste n'est constituée que d'un seul élément. Si ce sélecteur est présent le sélecteur LM n'est pas évalué.</li>
+<li>LE : évalué dans le cas où une erreur survient dans le traitement de la liste. (problème dans une requête SQL par exemple)</li>
+</ul></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div></div><div class="text_bloc doc_bloc" id="blocidcontent_4">
+<div class="doc_entry" id="doc_entry_Lespagesnoncaches"><div class="doc_title_entry"><a id="Lespagesnoncaches"></a>Les pages non cachées</div><div id="entryid_54" class="content doc_content"><p>Pour les pages qui ne sont pas cachées il n'y a pas de problème spécifique puisque le choix de la langue peut être négocié en dynamique entre le navigateur et Templeet. Il suffit pour cela d'utiliser la fonction <a href="lang.html#bestlang">bestlang</a>. Le principe général est simple: on a un tableau qui contient langues. Si la langue requise dans l'URL n'est pas disponible (appel de http:// .../mapage.html.de ) ou si aucune langue n'a été requise (appel de http:// .../mapage.html ) alors la fonction best lang est appelée et la variable lang sera positionnée au mieux en fonction de ce qui est disponible et des préférences indiquées dans le navigateur. Une fois la langue positionnée il ne reste plus qu'à afficher la page dans la langue sélectionnée en faisant par exemple un include d'un fichier spécifique à la langue.<br></p>
+<pre class="doc_code code">&#126;dont_cache()<br>&#126;rem(<br>&nbsp; les_langues_disponibles=array_flip(array('en','fr'));<br>&nbsp; if(lang=='' || &#126;is_null(les_langues_disponibles[lang]),<br>&nbsp;&nbsp;&nbsp;&nbsp; lang=bestlang(les_langues_disponibles,'en'))<br>&nbsp; <br>&nbsp; )<br>&nbsp; <br>langue:&#126;string(lang) <br>&#126;include("monfichier.".lang.".tmpl")<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Lespagescaches"><div class="doc_title_entry"><a id="Lespagescaches"></a>Les pages cachées</div><div id="entryid_55" class="content doc_content"><p>&nbsp;</p>
+<p class="doc_tip tip">Voir le fonctionnement du <a href="#Lecachedepages">cache de pages</a>.<br></p>
+<p>Pour les pages cachées le problèmes est plus complexe. Apache sait gérer de manière efficace un contenu en plusieurs langues à l'aide de <a href="http://httpd.apache.org/docs/2.2/content-negotiation.html">Multiviews</a>. Lors d'une requête où la langue n'est pas spécifiée ( appel de http:// .../mapage.html par opposition à l'appel de http:// .../mapage.html par exemple), Apache cherche parmi les fichiers qui sont disponibles et retourne la page la plus appropriée en fonction des préférences du navigateur. Si dans la requête la langue est spécifiée, le processus est sensiblement le même si ce n'est que Apache retournera en priorité la page dans la langue demandée si elle est disponible. Si elle ne l'est pas, comme précédemment, Apache recherche la page la plus appropriée en fonction des préférences du navigateur.</p>
+<p>La difficulté commence avec l'interaction avec Templeet. Dans le cas des pages multilingues, il y a une difficulté supplémentaire dans la mesure où pour Apache, toutes les pages d'une langue donnée doivent exister ou bien aucune. Si la page n'existe que dans une seule langue, Templeet ne sera jamais appelé puisque Multiviews prendra le pas systématiquement sur Templeet et retournera la seule page existante quelle que soit la langue demandée dans la requête.</p>
+<p>Pour cette raison, quand Templeet reçoit une requête pour une page qui existe en plusieurs langues, non seulement la page requise est mise en cache mais des fichiers correspondant aux autres langues sont également mis en cache afin de permettre à Multiviews de faire son choix en fonction de ce qui existe réellement.</p>
+<p>&nbsp;</p>
+<div id="_mcePaste" class="mcePaste" style="overflow: hidden; position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px;"><!-- 		@page { margin: 2cm } 		P { margin-bottom: 0.21cm } -->
+<p>précédemment</p>
+</div></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Gestiondeslanguesmthode1"><div class="doc_title_entry"><a id="Gestiondeslanguesmthode1"></a>Gestion des langues: méthode 1</div><div id="entryid_56" class="content doc_content"><p>Cette méthode consiste à utiliser un template par langue. Pour créer une page en français et en anglais il suffit de créer un template mapage.fr.html et un autre mapage.en.html. Templeet se charge de gérer le cache de page.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Gestiondeslanguesmthode2"><div class="doc_title_entry"><a id="Gestiondeslanguesmthode2"></a>Gestion des langues: méthode 2</div><div id="entryid_57" class="content doc_content"><p>La seconde méthode consiste à gérer les langues disponibles dans le template lui même. On considérera que la langue doit toujours être fournie dans l'URL et si ce n'est pas le cas alors il doit y avoir une redirection vers la page la plus appropriée. La variable <a href="#LesvariablesducurdeTempleet">all_lang</a> est alors utilisée par Templeet pour gérer le cache de page.</p>
+<pre class="doc_code code">&#126;rem(<br>&nbsp; all_lang=array_flip(array('en','fr'));<br>&nbsp; if(lang=='' || &#126;is_null(all_lang[lang]),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; redirect(relative_templeet().path.".".bestlang(all_lang,'en'))<br>&nbsp;&nbsp;&nbsp; )<br>&nbsp; <br>&nbsp; )<br>&nbsp; <br>langue:&#126;string(lang)<br>&#126;include("monfichier.".lang.".tmpl")<br></pre></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div><div class="doc_entry" id="doc_entry_Gestiondeslanguesmthode3"><div class="doc_title_entry"><a id="Gestiondeslanguesmthode3"></a>Gestion des langues: méthode 3</div><div id="entryid_58" class="content doc_content"><p>La troisième méthode utilise la fonction <a href="lang.html#includelang">&#126;includelang()</a>. Cette seule fonction permet de gérer tout le mécanisme de gestion des langues. Il suffit d'avoir un répertoire "lang" dans lequel se trouve un fichier par langue qui contient la liste des messages à afficher dans la page. La fonction se charge d'initialiser la variable <a href="#LesvariablesducurdeTempleet">all_lang</a> en fonction des fichiers trouvés et le cache est géré en conséquence.</p>
+<p>Cette méthode est la plus souple lorsque l'on souhaite décliner rapidement un site en plusieurs langues. L'ajout d'une langue est très facile puisque il suffit d'ajouter un fichier de langue par page dans le répertoire <strong>lang</strong>.<br></p></div>
+<div class="doc_linktop"><a href="#top"><span class="doc_linktop">Revenir en haut</span></a></div>
+</div></div></div><div id="doc_footer"></div>
+</div>
+
+</div>
+
+</td></tr>
+
+<tr><td style="height: 12px;"><img src="../skins/classic/corner_bottom.png" alt="corner_bottom" style="display: block;" /></td>
+<td style="vertical-align: bottom;"><img src="../skins/classic/pix.png" style="display: block; width: 100%; height: 1px;" alt="pix" /></td></tr>
+</table>
+</div>
+
+<div class="footer">
+<table style="width: 100%;">
+<tr><td style="width: 100%;vertical-align: top;padding-left: 5px;">
+<div>
+<span id="snapshot" style="position: relative;"
+                            onmouseover="toggleDiv('executedtime',1,event)"
+                            onmouseout="toggleDiv('executedtime',0)"><script type="text/javascript">
+//<![CDATA[
+dskin("snapshot",{ "&SNAPSHOT&" : "201606171145"});
+//]]>
+</script> 
+</span>
+<div id="executedtime" class="floatwin" style="top: 10px;"><script type="text/javascript">
+//<![CDATA[
+dskin("executetime",{ "&TIME&" : "0,3012"});
+//]]>
+</script>
+</div>
+
+<br />
+<a href="#" onmousedown="validxhtml()"><img src="../auth/icons/valid-xhtml10.png" alt="valid-xhtml10.png" /></a>
+<div style="display: none;">
+  <form id="formid" method="post" enctype="multipart/form-data" action="http://validator.w3.org/check">
+    <div>
+      <textarea id="fragment" name="fragment" rows="12" cols="80"></textarea>
+      <input title="Submit for validation" type="submit" value="Check" />
+    </div>
+  </form>
+</div>
+</div>
+</td><td><a href="http://www.templeet.org/"><img src="../auth/icons/powered_by_templeet.png"
+style="padding: 5px;display: block;" alt="powered_by_templeet" /></a>
+</td></tr>
+</table>
+</div>
+<img src="../skins/classic/pix.png" style="display: block; height: 1px; width: 100%;" alt="pix" />
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* 
+ * 
+ */
+ 
+body {
+	font-size: 12px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	background-color: #FDFDD6;
+	margin: 0px;
+	padding: 0px;
+}
+
+table {
+	margin: 0px;
+	padding: 0px;
+	border-spacing: 0px;
+}
+
+td {
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.main {
+	background-color: white;
+	text-align: left;
+}
+
+table.chart { border: 0px solid black; border-collapse: collapse; margin: 0.2em;}
+table.chart > tbody > tr > td { border: 1px solid black; margin: 2px; padding: 0.1em 0.2em; text-align: center;}
+
+table.lo { border: 0px; border-collapse: collapse; margin: 0.2em;}
+table.lo > tbody > tr > td { border: 0px; margin: 2px; padding: 0.1em 0.2em; text-align: left; vertical-align: baseline;}
+
+button { background-color: transparent; border: 0; cursor: pointer; }
+
+.editconfig_help {background-color: #AAAAAA;}
+
+
+a:link,a:visited,a:active {
+	text-decoration:none;
+	color:blue;
+}
+
+a:hover {
+	text-decoration:underline;
+	color:blue;
+}
+
+img {
+	border:0px;
+	display: inline;
+}
+
+input[type="text"].form, input[type="password"].form {
+	border: 1px black inset;
+	background-color: #eeeeee;
+}
+
+input[type="text"].form:active, input[type="text"].form:focus,
+input[type="password"].form:active, input[type="password"].form:focus {
+	border: 1px black inset;
+	background-color: white;
+}
+
+div.floatwin {
+    position:absolute;
+    top: 150px;
+    left: 450px;
+    width:200px;
+    visibility:hidden;
+    background: #FDFDD6;
+    padding: 5px;
+    border: solid black 1px;
+    z-index: 100;
+}
+
+.error_line {
+  padding-left: 20px;
+  color: red;
+  background: url("../auth/icons/error.png") no-repeat 0px 0px;
+  padding-bottom: 5px;
+}
+
+.error {
+  color: red;
+  font-weight: 700;
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+.error:first-letter {
+  padding-left: 55px;
+  padding-top:20px;
+  padding-bottom:20px;
+  background: url("../auth/icons/error-big.png") no-repeat 0px center;
+}
+
+.code {
+  background: #FDFDD6;
+  border: solid black 1px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 0.5em 1em;
+  font-size: 10px;
+}
+
+.warning {
+  color: black;
+  padding: 1em 1em 1em 55px;
+  margin-left: 1em;
+  margin-right: 2em;
+  background: #ffcf3e url("../auth/icons/warning-big.png") no-repeat 5px center;
+  border: 1px dashed black;
+  min-height: 50px;
+
+}
+
+.tip {
+	border:1px dashed black;
+  margin-left: 1em;
+  margin-right: 2em;
+  padding: 1em 1em 1em 55px;
+  background:#bdf3c9 url("../auth/icons/tip.png") no-repeat 5px center;
+  min-height: 50px;
+}
+
+/* *************************************************** */
+button.button_ok {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/archive/auth/icons/ok.png");
+	margin: 5px;
+	cursor: pointer; 
+	position: relative;
+}
+
+button.button_cancel {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/archive/auth/icons/cancel.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+button.button_reset {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/archive/auth/icons/reset.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+button.button_trash {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/archive/auth/icons/trash.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+div.button_popup {
+  top: 30px;
+  left: 0px;
+
+}
+

@@ -1,0 +1,239 @@
+/* 
+ * Pascal COURTOIS
+ */
+ 
+
+a:link,a:visited,.examples_toggle {
+  text-decoration: none;
+  color: blue;
+}
+
+#validxhtml img {
+  padding: 0 0 5px 5px;
+  border: 0;
+}
+
+#poweredbytempleet img {
+  padding: 0 5px 5px 0;
+  border: 0;
+}
+
+body {
+  background: url(/web/20170128050307im_/http://www.templeet.org/skins/templeet4/img/bg.gif);
+  margin: 0;
+}
+
+.templeet_box {
+  border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -moz-box-shadow: 5px 5px 10px #111111;  
+  -webkit-box-shadow: 5px 5px 10px #111111;  
+  box-shadow: 5px 5px 10px #111111;  
+  background: #F8EA94;
+  padding: 15px 15px 15px 15px;
+  margin:  0 0 30px 0;
+  position: relative;
+
+}
+
+.templeet_box > div {
+  overflow: auto;
+  height: 100%;
+//  max-height: 500px;
+}
+
+.templeet_box > h2 {
+  background:  #f0d841;
+  border: none dotted solid #BBC4B2 1px;
+  clear: right;
+  color: #666600;
+  font-size: 140%;
+  font-weight: bold;
+  margin: -22px 1em 1em;
+  max-width: 50%;
+  padding: 0.5em;
+  text-align: left;
+//  cursor: move;
+  position: relative;
+}
+
+.templeet_box > h2 > img {
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.templeet_box img.btn_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.templeet_box > div table td{
+  padding: 1px 5px;
+}
+.templeet_close img.btn_close {
+  display: none;
+}
+
+.templeet_column {
+  list-style-type: none;
+  margin: 0px 5px 0px 5px;
+  padding: 0;
+  min-height: 1em;
+  display: inline-block;
+}
+
+.templeet_close {
+  -moz-box-shadow: none;  
+  -webkit-box-shadow: none; 
+  box-shadow: none;  
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  background: none;
+  padding: 0;
+  margin:  0;
+  display: inline-block;
+  width: auto;
+  cursor: move;
+}
+
+.templeet_close > div {
+  display: none;
+}
+
+.templeet_close > h2 {
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  background: #efe186;
+
+  border: 0;
+  text-align: left;
+  margin:  0 0 0 0;
+  padding: 5px;
+  cursor: move;
+  max-width: none;
+  font-size: 100%;
+}
+
+#templeet_col_widgets {
+  list-style-type: none;
+  margin: 5px;
+  min-height: 50px;
+  padding: 0;
+}
+
+#templeet_left {
+  padding: 5px;
+  vertical-align: top;
+
+}
+
+#templeet_right {
+  width: 16em;
+  max-width: 16em;
+  min-width: 16em;
+  vertical-align: top;
+}
+
+#templeet_widget_title {
+  background: #f0d841;
+  border: 0;
+  text-align: left;
+//  font-size: 140%;
+  font-weight: bold;
+  padding: 0.5em;
+  margin: 0em 0.5em 0.5em 0.5em;
+}
+
+#templeet_col_widgets li {
+  padding-top: 5px;
+  margin: 5px;
+  display: list-item;
+
+}
+
+#templeet_col_widgets > li > div:first-child {
+  display: none;
+}
+
+.templeet_top {
+  height: 64px;
+  background-image: url(/web/20170128050307im_/http://www.templeet.org/skins/templeet4/img/bg_top.png);  
+  margin: 0 0 20px 0;
+}
+
+.templeet_column .templeet-placeholder { 
+  border: 1px dotted black;
+  visibility: visible !important;
+  height: 50px !important;
+  margin:  0 0 30px 0;
+  background: #efe186;
+  opacity: 0.5;
+}
+
+#templeet_col_widgets .templeet-placeholder { 
+  border: 1px dotted black;
+  visibility: visible !important;
+  height: 1.5em !important;
+  background: #efe186;
+  opacity: 0.5;
+}
+
+.templeet-placeholder * { 
+  visibility: hidden; 
+}
+
+a > img {
+  border: 0;
+}
+
+#menu {
+  list-style-type: none;
+  margin: 5px;
+  min-height: 50px;
+  padding: 0;
+}
+
+#menu li {
+  padding: 5px;
+  margin: 2px;
+  background: #f0d841;
+  font-weight: bold;
+  color: #666600;
+}
+
+#menu li a, #menu li a:visited , #templeet_widget_title {
+  color: #666600;
+  text-decoration: none;
+}
+
+#menu li img {
+  vertical-align: middle;
+}
+
+.preload {
+  position:absolute;
+  left: -10000px;
+}
+/*
+     FILE ARCHIVED ON 05:03:07 Jan 28, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:34 Nov 16, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1328.728
+  exclusion.robots: 0.109
+  exclusion.robots.policy: 0.099
+  cdx.remote: 0.07
+  esindex: 0.011
+  LoadShardBlock: 1297.59 (3)
+  PetaboxLoader3.datanode: 1257.543 (5)
+  CDXLines.iter: 14.889 (3)
+  PetaboxLoader3.resolve: 106.07 (3)
+  load_resource: 147.46 (2)
+*/

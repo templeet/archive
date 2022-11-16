@@ -1,0 +1,202 @@
+/* 
+ * 
+ */
+ 
+body {
+	font-size: 12px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	background-color: #FDFDD6;
+	margin: 0px;
+	padding: 0px;
+}
+
+table {
+	margin: 0px;
+	padding: 0px;
+	border-spacing: 0px;
+}
+
+td {
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.main {
+	background-color: white;
+	text-align: left;
+}
+
+table.chart { border: 0px solid black; border-collapse: collapse; margin: 0.2em;}
+table.chart > tbody > tr > td { border: 1px solid black; margin: 2px; padding: 0.1em 0.2em; text-align: center;}
+
+table.lo { border: 0px; border-collapse: collapse; margin: 0.2em;}
+table.lo > tbody > tr > td { border: 0px; margin: 2px; padding: 0.1em 0.2em; text-align: left; vertical-align: baseline;}
+
+button { background-color: transparent; border: 0; cursor: pointer; }
+
+.editconfig_help {background-color: #AAAAAA;}
+
+
+a:link,a:visited,a:active {
+	text-decoration:none;
+	color:blue;
+}
+
+a:hover {
+	text-decoration:underline;
+	color:blue;
+}
+
+img {
+	border:0px;
+	display: inline;
+}
+
+input[type="text"].form, input[type="password"].form {
+	border: 1px black inset;
+	background-color: #eeeeee;
+}
+
+input[type="text"].form:active, input[type="text"].form:focus,
+input[type="password"].form:active, input[type="password"].form:focus {
+	border: 1px black inset;
+	background-color: white;
+}
+
+div.floatwin {
+    position:absolute;
+    top: 150px;
+    left: 450px;
+    width:200px;
+    visibility:hidden;
+    background: #FDFDD6;
+    padding: 5px;
+    border: solid black 1px;
+    z-index: 100;
+}
+
+.error_line {
+  padding-left: 20px;
+  color: red;
+  background: url("/web/20161103102629im_/http://templeet.org/auth/icons/error.png") no-repeat 0px 0px;
+  padding-bottom: 5px;
+}
+
+.error {
+  color: red;
+  font-weight: 700;
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+.error:first-letter {
+  padding-left: 55px;
+  padding-top:20px;
+  padding-bottom:20px;
+  background: url("/web/20161103102629im_/http://templeet.org/auth/icons/error-big.png") no-repeat 0px center;
+}
+
+.code {
+  background: #FDFDD6;
+  border: solid black 1px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 0.5em 1em;
+  font-size: 10px;
+}
+
+.warning {
+  color: black;
+  padding: 1em 1em 1em 55px;
+  margin-left: 1em;
+  margin-right: 2em;
+  background: #ffcf3e url("/web/20161103102629im_/http://templeet.org/auth/icons/warning-big.png") no-repeat 5px center;
+  border: 1px dashed black;
+  min-height: 50px;
+
+}
+
+.tip {
+	border:1px dashed black;
+  margin-left: 1em;
+  margin-right: 2em;
+  padding: 1em 1em 1em 55px;
+  background:#bdf3c9 url("/web/20161103102629im_/http://templeet.org/auth/icons/tip.png") no-repeat 5px center;
+  min-height: 50px;
+}
+
+/* *************************************************** */
+button.button_ok {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/web/20161103102629im_/http://templeet.org/auth/icons/ok.png");
+	margin: 5px;
+	cursor: pointer; 
+	position: relative;
+}
+
+button.button_cancel {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/web/20161103102629im_/http://templeet.org/auth/icons/cancel.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+button.button_reset {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/web/20161103102629im_/http://templeet.org/auth/icons/reset.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+button.button_trash {
+  width:24px;
+  height:24px;
+  border:0px;
+  background-color: transparent;
+	background-image: url("/web/20161103102629im_/http://templeet.org/auth/icons/trash.png");
+	margin: 5px;
+  cursor: pointer; 
+	position: relative;
+}
+
+div.button_popup {
+  top: 30px;
+  left: 0px;
+
+}
+
+
+/*
+     FILE ARCHIVED ON 10:26:29 Nov 03, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:18 Nov 16, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 221.373
+  exclusion.robots: 0.073
+  exclusion.robots.policy: 0.068
+  RedisCDXSource: 0.697
+  esindex: 0.006
+  LoadShardBlock: 205.325 (3)
+  PetaboxLoader3.datanode: 306.963 (5)
+  CDXLines.iter: 13.388 (3)
+  load_resource: 371.757 (2)
+  PetaboxLoader3.resolve: 224.161 (2)
+*/
